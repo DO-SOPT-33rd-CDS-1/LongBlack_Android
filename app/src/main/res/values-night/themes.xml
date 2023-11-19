@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LongDroid" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Status bar color. -->
+        // TODO 컬러시스템 추가후 statusbar 색 변경 추가
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>
