@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--head-->
+    <style name="H1_Light">
+        <item name="fontFamily">@font/pretendard_light</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="H2_Bold">
+        <item name="fontFamily">@font/pretendard_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="H3_SemiBold">
+        <item name="fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="H4_SemiBold">
+        <item name="fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="H5_SemiBold">
+        <item name="fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="H6_Bold">
+        <item name="fontFamily">@font/pretendard_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="H7_SemiBold">
+        <item name="fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!--body-->
+    <style name="B1_Regular">
+        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="B2_Regular">
+        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="B3_Medium">
+        <item name="fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="B4_Light">
+        <item name="fontFamily">@font/pretendard_light</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="B5_Medium">
+        <item name="fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="B6_Regular">
+        <item name="fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="B7_Bold">
+        <item name="fontFamily">@font/pretendard_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="B8_Light">
+        <item name="fontFamily">@font/pretendard_light</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>
