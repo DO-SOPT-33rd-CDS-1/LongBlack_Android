@@ -1,12 +1,12 @@
 package com.example.longdroid.presentation.article
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.longdroid.R
+import com.example.longdroid.databinding.ActivityArticleBinding
+import com.example.longdroid.util.binding.BindingActivity
 
-class ArticleActivity : AppCompatActivity() {
+class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activity_article) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_article)
     }
 }
