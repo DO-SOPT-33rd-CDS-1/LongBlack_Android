@@ -15,6 +15,10 @@ class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activ
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
         val headerAdapter = NoteListHeaderAdapter()
         val itemAdapter = NoteListItemAdapter()
         val footerAdapter = NoteListFooterAdapter()
