@@ -1,123 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
-
-    <ImageView
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="53dp"
-        android:src="@drawable/ic_arrow_left_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_note_list_title"
-        style="@style/H3_SemiBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/note_list_title"
-        android:textColor="@color/sub_g1"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
-        app:layout_constraintStart_toEndOf="@+id/btn_back"
-        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ly_search_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/shape_border_32"
-        android:backgroundTint="@color/sub_g6"
-        android:paddingVertical="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/tv_note_list_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_note_list_title"
-        app:layout_constraintTop_toTopOf="@id/tv_note_list_title">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ImageView
-            android:id="@+id/iv_search"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="11dp"
-            android:src="@drawable/ic_search"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="53dp"
+            android:src="@drawable/ic_arrow_left_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/B5_Medium"
+            android:id="@+id/tv_note_list_title"
+            style="@style/H3_SemiBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:text="@string/note_list_search"
-            android:textColor="@color/sub_g4"
-            app:layout_constraintBottom_toBottomOf="@id/iv_search"
-            app:layout_constraintStart_toEndOf="@id/iv_search"
-            app:layout_constraintTop_toTopOf="@id/iv_search" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/note_list_title"
+            android:textColor="@color/sub_g1"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ly_search_bar">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_border_32"
+            android:backgroundTint="@color/sub_g6"
+            android:paddingVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_note_list_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_note_list_title"
+            app:layout_constraintTop_toTopOf="@id/tv_note_list_title">
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/B5_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/note_list_search"
+                android:textColor="@color/sub_g4"
+                app:layout_constraintBottom_toBottomOf="@id/iv_search"
+                app:layout_constraintStart_toEndOf="@id/iv_search"
+                app:layout_constraintTop_toTopOf="@id/iv_search" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/ly_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_search_bar">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/B5_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_border_43"
+                    android:backgroundTint="@color/sub_g1"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="6dp"
+                    android:text="@string/note_list_not_read"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    style="@style/B5_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/shape_border_43_stroke"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="6dp"
+                    android:text="@string/note_list_give_stamp"
+                    android:textColor="@color/sub_g1" />
+
+                <TextView
+                    style="@style/B5_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/shape_border_43_stroke"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="6dp"
+                    android:text="@string/note_list_grade_5"
+                    android:textColor="@color/sub_g1" />
+
+                <TextView
+                    style="@style/B5_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/shape_border_43_stroke"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="6dp"
+                    android:text="@string/note_list_book_mark"
+                    android:textColor="@color/sub_g1" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/container_bot_num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_category" />
 
         <LinearLayout
+            android:id="@+id/container_bot_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                style="@style/B5_Medium"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_border_43"
-                android:backgroundTint="@color/sub_g1"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="6dp"
-                android:text="@string/note_list_not_read"
-                android:textColor="@color/white" />
+                android:src="@drawable/ic_bottom_num_1" />
 
-            <TextView
-                style="@style/B5_Medium"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/shape_border_43_stroke"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="6dp"
-                android:text="@string/note_list_give_stamp"
-                android:textColor="@color/sub_g1" />
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_bottom_num_2" />
 
-            <TextView
-                style="@style/B5_Medium"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/shape_border_43_stroke"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="6dp"
-                android:text="@string/note_list_grade_5"
-                android:textColor="@color/sub_g1" />
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_bottom_num_3" />
 
-            <TextView
-                style="@style/B5_Medium"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/shape_border_43_stroke"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="6dp"
-                android:text="@string/note_list_book_mark"
-                android:textColor="@color/sub_g1" />
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_bottom_num_4" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_bottom_num_5" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_bottom_num_next" />
         </LinearLayout>
-    </HorizontalScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
