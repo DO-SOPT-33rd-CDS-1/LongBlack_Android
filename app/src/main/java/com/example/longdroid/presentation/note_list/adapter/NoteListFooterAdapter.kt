@@ -1,16 +1,12 @@
 package com.example.longdroid.presentation.note_list.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.R
+import com.example.longdroid.presentation.note_list.viewholder.FooterViewHolder
 
-class NoteListFooterAdapter : RecyclerView.Adapter<NoteListFooterAdapter.FooterViewHolder>() {
-
-    inner class FooterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        // 나중에
-    }
+class NoteListFooterAdapter : RecyclerView.Adapter<FooterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FooterViewHolder {
         val view = LayoutInflater.from(parent.context)

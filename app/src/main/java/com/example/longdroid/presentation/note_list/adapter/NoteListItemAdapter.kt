@@ -5,10 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.R
+import com.example.longdroid.presentation.note_list.viewholder.NoteListViewHolder
 
-class NoteListItemAdapter : RecyclerView.Adapter<NoteListItemAdapter.NoteListViewHolder>() {
-
-    inner class NoteListViewHolder(view: View) : RecyclerView.ViewHolder(view)
+class NoteListItemAdapter : RecyclerView.Adapter<NoteListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
