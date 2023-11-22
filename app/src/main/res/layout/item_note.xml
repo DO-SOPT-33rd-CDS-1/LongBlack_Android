@@ -17,10 +17,13 @@
         android:src="@drawable/img_note_open_gallery" />
 
     <ImageView
+        android:id="@+id/btn_book_mark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="9dp"
+        android:clickable="true"
+        android:focusable="true"
         android:src="@drawable/ic_book_mark_off_big"
         app:layout_constraintEnd_toEndOf="@+id/iv_note_img"
         app:layout_constraintTop_toTopOf="@+id/iv_note_img" />
