@@ -25,7 +25,12 @@ class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activ
 
         val concatAdapter = ConcatAdapter(headerAdapter, itemAdapter, footerAdapter)
 
-        binding.recyclerView.adapter = concatAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.rvNoteList.adapter = concatAdapter
+        binding.rvNoteList.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onDestroy() {
+        binding.rvNoteList.adapter = null
+        super.onDestroy()
     }
 }
