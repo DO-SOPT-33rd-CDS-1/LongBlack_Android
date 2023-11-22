@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:orientation="vertical"
-    app:cardCornerRadius="8dp"
     app:cardPreventCornerOverlap="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,9 +21,19 @@
             android:scaleType="centerCrop"
             android:src="@drawable/img_note_open_gallery" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:src="@drawable/ic_book_mark_off_big"
+            app:layout_constraintEnd_toEndOf="@+id/iv_note_img"
+            app:layout_constraintTop_toTopOf="@+id/iv_note_img" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_note_text"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/shape_border_8_bottom"
             android:backgroundTint="@color/red"
             android:paddingHorizontal="23dp"
@@ -51,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:textColor="@color/sub_g1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/note_title"
@@ -67,8 +77,11 @@
                 app:layout_constraintTop_toTopOf="@id/note_writer" />
 
             <TextView
+                android:id="@+id/tv_note_alphabet"
+                style="@style/B3_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/sub_g1"
                 app:layout_constraintBottom_toBottomOf="@+id/note_writer"
                 app:layout_constraintStart_toEndOf="@+id/iv_divide"
                 app:layout_constraintTop_toTopOf="@+id/note_writer"
