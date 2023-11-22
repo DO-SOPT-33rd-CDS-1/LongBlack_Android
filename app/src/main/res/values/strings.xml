@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">LongDroid</string>
     <string name="binding_error">에러가 발생했습니다</string>
+
+    <!-- 노트 리스트 뷰 -->
+    <string name="note_list_title">노트</string>
+    <string name="note_list_search">검색어를 입력하세요.</string>
 </resources>
