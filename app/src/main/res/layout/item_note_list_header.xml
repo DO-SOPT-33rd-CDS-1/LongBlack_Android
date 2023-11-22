@@ -7,7 +7,7 @@
     android:paddingBottom="20dp">
 
     <ImageView
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_note_list_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:text="@string/note_list_title"
         android:textColor="@color/sub_g1"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
-        app:layout_constraintStart_toEndOf="@+id/btn_back"
-        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_note_list_back"
+        app:layout_constraintStart_toEndOf="@+id/btn_note_list_back"
+        app:layout_constraintTop_toTopOf="@+id/btn_note_list_back" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_search_bar"
+        android:id="@+id/container_note_list_search_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="@id/tv_note_list_title">
 
         <ImageView
-            android:id="@+id/iv_search"
+            android:id="@+id/iv_note_list_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
@@ -52,26 +52,27 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tv_note_list_search"
             style="@style/B5_Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:text="@string/note_list_search"
             android:textColor="@color/sub_g4"
-            app:layout_constraintBottom_toBottomOf="@id/iv_search"
-            app:layout_constraintStart_toEndOf="@id/iv_search"
-            app:layout_constraintTop_toTopOf="@id/iv_search" />
+            app:layout_constraintBottom_toBottomOf="@id/iv_note_list_search"
+            app:layout_constraintStart_toEndOf="@id/iv_note_list_search"
+            app:layout_constraintTop_toTopOf="@id/iv_note_list_search" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <HorizontalScrollView
-        android:id="@+id/container_category"
+        android:id="@+id/container_note_list_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="23dp"
         android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container_search_bar">
+        app:layout_constraintTop_toBottomOf="@id/container_note_list_search_bar">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -79,6 +80,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_note_list_not_read"
                 style="@style/B5_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,6 +92,7 @@
                 android:textColor="@color/white" />
 
             <TextView
+                android:id="@+id/tv_note_list_get_stamp"
                 style="@style/B5_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,10 +100,11 @@
                 android:background="@drawable/shape_border_43_stroke"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="6dp"
-                android:text="@string/note_list_give_stamp"
+                android:text="@string/note_list_get_stamp"
                 android:textColor="@color/sub_g1" />
 
             <TextView
+                android:id="@+id/tv_note_list_grade_5"
                 style="@style/B5_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,6 +116,7 @@
                 android:textColor="@color/sub_g1" />
 
             <TextView
+                android:id="@+id/tv_note_list_book_mark"
                 style="@style/B5_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

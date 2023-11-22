@@ -6,7 +6,7 @@
     android:layout_marginTop="40dp">
 
     <LinearLayout
-        android:id="@+id/container_bot_num"
+        android:id="@+id/container_note_list_bot_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
@@ -16,39 +16,44 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
+            android:id="@+id/iv_note_list_bot_num_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_bottom_num_1" />
 
         <ImageView
+            android:id="@+id/iv_note_list_bot_num_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_bottom_num_2" />
 
         <ImageView
+            android:id="@+id/iv_note_list_bot_num_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_bottom_num_3" />
 
         <ImageView
+            android:id="@+id/iv_note_list_bot_num_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_bottom_num_4" />
 
         <ImageView
+            android:id="@+id/iv_note_list_bot_num_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_bottom_num_5" />
 
         <ImageView
+            android:id="@+id/iv_note_list_bot_num_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_bottom_num_next" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

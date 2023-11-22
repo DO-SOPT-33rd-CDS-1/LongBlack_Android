@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@id/iv_note_img">
 
         <TextView
-            android:id="@+id/note_title"
+            android:id="@+id/tv_note_title"
             style="@style/H5_SemiBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             tools:text="오픈갤러리 : 내 거실이 갤러리, 미술 시장의 빈틈을 파고든 원화구 팔칠육오사삼이일영" />
 
         <TextView
-            android:id="@+id/note_writer"
+            android:id="@+id/tv_note_writer"
             style="@style/B3_Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             android:textColor="@color/sub_g1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/note_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_note_title"
             tools:text="박희정" />
 
         <ImageView
@@ -71,9 +71,9 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
             android:src="@drawable/ic_divide"
-            app:layout_constraintBottom_toBottomOf="@+id/note_writer"
-            app:layout_constraintStart_toEndOf="@id/note_writer"
-            app:layout_constraintTop_toTopOf="@id/note_writer" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_note_writer"
+            app:layout_constraintStart_toEndOf="@id/tv_note_writer"
+            app:layout_constraintTop_toTopOf="@id/tv_note_writer" />
 
         <TextView
             android:id="@+id/tv_note_alphabet"
@@ -81,9 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/sub_g1"
-            app:layout_constraintBottom_toBottomOf="@+id/note_writer"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_note_writer"
             app:layout_constraintStart_toEndOf="@+id/iv_divide"
-            app:layout_constraintTop_toTopOf="@+id/note_writer"
+            app:layout_constraintTop_toTopOf="@+id/tv_note_writer"
             tools:text="P" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
