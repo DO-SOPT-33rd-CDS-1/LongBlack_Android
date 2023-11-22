@@ -23,6 +23,7 @@
         android:id="@+id/view_article_top"
         android:layout_width="0dp"
         android:layout_height="4dp"
+        android:layout_marginTop="40dp"
         android:background="@color/sub_g1"
         app:layout_constraintEnd_toEndOf="@id/gl_end"
         app:layout_constraintStart_toStartOf="@id/gl_start"
