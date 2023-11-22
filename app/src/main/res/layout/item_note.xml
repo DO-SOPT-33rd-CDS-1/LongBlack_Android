@@ -48,6 +48,7 @@
             android:lineSpacingExtra="6dp"
             android:maxLines="2"
             android:textColor="@color/sub_g1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="오픈갤러리 : 내 거실이 갤러리, 미술 시장의 빈틈을 파고든 원화구 팔칠육오사삼이일영" />
