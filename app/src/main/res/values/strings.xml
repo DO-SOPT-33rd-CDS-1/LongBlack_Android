@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LongDroid</string>
     <string name="binding_error">에러가 발생했습니다</string>
+    <string name="no_read">이시간이지나면\n읽을수없습니다.</string>
 </resources>
