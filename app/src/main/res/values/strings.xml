@@ -9,4 +9,11 @@
     <string name="note_list_get_stamp">스탬프 받은 노트</string>
     <string name="note_list_grade_5">평점 5점 준 노트</string>
     <string name="note_list_book_mark">북마크 한 노트</string>
+
+    <!-- 라이브러리 뷰-->
+    <string name="library_title">라이브러리</string>
+    <string name="library_tab_stamp">스탬프</string>
+    <string name="library_tab_my_note">내 노트</string>
+    <string name="library_tab_sticker">스티커</string>
+    <string name="library_tab_book_mark">북마크</string>
 </resources>
