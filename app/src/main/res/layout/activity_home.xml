@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginVertical="10dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/ic_clock"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
                 android:id="@+id/tv_no_read"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/pretendard_medium"
                 android:text="@string/no_read"
                 android:textColor="@color/white"
@@ -55,7 +55,7 @@
                 android:id="@+id/tv_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/pretendard_light"
                 android:text="01"
                 android:textColor="@color/white"
@@ -68,7 +68,7 @@
                 android:id="@+id/tv_colons_hm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/pretendard_light"
                 android:text=":"
                 android:textColor="@color/white"
@@ -81,20 +81,20 @@
                 android:id="@+id/tv_minute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/pretendard_light"
                 android:text="45"
                 android:textColor="@color/white"
                 android:textSize="40sp"
-                app:layout_constraintBottom_toBottomOf="@id/iv_clock"
+                app:layout_constraintBottom_toBottomOf="@id/tv_second"
                 app:layout_constraintEnd_toStartOf="@id/tv_colons_ms"
-                app:layout_constraintTop_toTopOf="@id/iv_clock" />
+                app:layout_constraintTop_toTopOf="@id/tv_second" />
 
             <TextView
                 android:id="@+id/tv_colons_ms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/pretendard_light"
                 android:text=":"
                 android:textColor="@color/white"
@@ -107,7 +107,7 @@
                 android:id="@+id/tv_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="@font/pretendard_light"
                 android:text="07"
                 android:textColor="@color/white"
@@ -118,111 +118,202 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_head"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_time"
-            app:layout_constraintStart_toStartOf="parent">
-            
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_time">
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
                 android:background="@color/sand"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_head_structure"
-                android:layout_width="370dp"
-                android:layout_height="370dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="360dp"
+                android:layout_height="363dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
                 android:src="@drawable/img_note_structure"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_note"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_head"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_head">
 
             <TextView
                 android:id="@+id/tv_today_note_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="27dp"
                 android:text="@string/todaynote_title"
-                android:textSize="15sp"
-                android:fontFamily="@font/pretendard_medium"
+                android:textAppearance="@style/B3_Medium"
                 android:textColor="@color/main_orange"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tv_today_note_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="6sp"
                 android:text="@string/todaynote_content"
-                android:textSize="20sp"
-                android:fontFamily="@font/pretendard_semibold"
-                app:layout_constraintTop_toBottomOf="@id/tv_today_note_title"
+                android:textAppearance="@style/H5_SemiBold"
                 app:layout_constraintStart_toStartOf="@id/tv_today_note_title"
-                android:layout_marginTop="15dp"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_today_note_title" />
 
             <TextView
                 android:id="@+id/tv_comunity_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
                 android:text="@string/comunity_title"
-                android:textSize="15sp"
-                android:fontFamily="@font/pretendard_medium"
+                android:textAppearance="@style/B3_Medium"
                 android:textColor="@color/main_orange"
-                app:layout_constraintTop_toBottomOf="@id/tv_today_note_content"
                 app:layout_constraintStart_toStartOf="@id/tv_today_note_content"
-                android:layout_marginTop="30dp" />
+                app:layout_constraintTop_toBottomOf="@id/tv_today_note_content" />
 
             <ImageView
                 android:id="@+id/iv_comunity_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/img_home_thumbnail"
-                app:layout_constraintTop_toBottomOf="@id/tv_comunity_title"
                 app:layout_constraintStart_toStartOf="@id/tv_comunity_title"
-                android:layout_marginTop="10dp"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_comunity_title" />
 
             <TextView
                 android:id="@+id/tv_comunity_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/comunity_content"
+                android:layout_marginStart="16dp"
                 android:fontFamily="@font/pretendard_regular"
-                android:textSize="14sp"
-                android:textColor="@color/sub_g1"
-                app:layout_constraintTop_toTopOf="@id/iv_comunity_profile"
-                app:layout_constraintStart_toEndOf="@id/iv_comunity_profile"
-                android:layout_marginStart="15dp"
                 android:lineSpacingExtra="5dp"
-                />
+                android:text="@string/comunity_content"
+                android:textColor="@color/sub_g1"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/iv_comunity_profile"
+                app:layout_constraintTop_toTopOf="@id/iv_comunity_profile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <ImageView
-            android:id="@+id/iv_line_on"
+
+        <View
+            android:id="@+id/line_on"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/line_bold_android"
-            app:layout_constraintTop_toBottomOf="@id/layout_note"
+            android:layout_height="8dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/sub_g6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="40dp"/>
+            app:layout_constraintTop_toBottomOf="@id/layout_note" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_go_to_note"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="28dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_on">
 
-        
+            <ImageView
+                android:id="@+id/iv_go_to_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_go_to_note"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_go_to_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/all_note"
+                android:textAppearance="@style/B5_Medium"
+                app:layout_constraintBottom_toBottomOf="@id/iv_go_to_note"
+                app:layout_constraintStart_toEndOf="@id/iv_go_to_note"
+                app:layout_constraintTop_toTopOf="@id/iv_go_to_note" />
+
+            <ImageView
+                android:id="@+id/iv_arrow_go_to_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/ic_arrow_right_small"
+                app:layout_constraintBottom_toBottomOf="@id/iv_go_to_note"
+                app:layout_constraintStart_toEndOf="@id/tv_go_to_note"
+                app:layout_constraintTop_toTopOf="@id/iv_go_to_note" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_go_to_library"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_go_to_note"
+            app:layout_constraintStart_toEndOf="@id/btn_go_to_note"
+            app:layout_constraintTop_toTopOf="@id/btn_go_to_note">
+
+            <ImageView
+                android:id="@+id/iv_go_to_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_go_to_library"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_go_to_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/go_library"
+                android:textAppearance="@style/B5_Medium"
+                app:layout_constraintBottom_toBottomOf="@id/iv_go_to_library"
+                app:layout_constraintStart_toEndOf="@id/iv_go_to_library"
+                app:layout_constraintTop_toTopOf="@id/iv_go_to_library" />
+
+            <ImageView
+                android:id="@+id/iv_arrow_go_to_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/ic_arrow_right_small"
+                app:layout_constraintBottom_toBottomOf="@id/iv_go_to_library"
+                app:layout_constraintStart_toEndOf="@id/tv_go_to_library"
+                app:layout_constraintTop_toTopOf="@id/iv_go_to_library" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/line_under"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/sub_g6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_go_to_note" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

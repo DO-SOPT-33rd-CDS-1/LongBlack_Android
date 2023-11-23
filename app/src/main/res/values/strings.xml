@@ -6,4 +6,6 @@
     <string name="todaynote_title">오늘의 노트</string>
     <string name="comunity_title">노트 커뮤니티</string>
     <string name="comunity_content">“사람이 없어도 운영이 안되는 경우도 간혹 있던\n데...😢😢”</string>
+    <string name="all_note">전체 노트 보기</string>
+    <string name="go_library">라이브러리 가기</string>
 </resources>
