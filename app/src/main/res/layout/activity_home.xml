@@ -174,6 +174,7 @@
                 android:lineSpacingExtra="6sp"
                 android:text="@string/todaynote_content"
                 android:textAppearance="@style/H5_SemiBold"
+                android:textColor="@color/sub_g1"
                 app:layout_constraintStart_toStartOf="@id/tv_today_note_title"
                 app:layout_constraintTop_toBottomOf="@id/tv_today_note_title" />
 
@@ -227,7 +228,6 @@
             android:layout_height="match_parent"
             android:layout_marginVertical="28dp"
             android:layout_marginStart="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line_on">
 
@@ -247,6 +247,7 @@
                 android:layout_marginStart="12dp"
                 android:text="@string/all_note"
                 android:textAppearance="@style/B5_Medium"
+                android:textColor="@color/sub_g1"
                 app:layout_constraintBottom_toBottomOf="@id/iv_go_to_note"
                 app:layout_constraintStart_toEndOf="@id/iv_go_to_note"
                 app:layout_constraintTop_toTopOf="@id/iv_go_to_note" />
@@ -279,7 +280,7 @@
                 android:src="@drawable/ic_go_to_library"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_go_to_library"
@@ -288,6 +289,7 @@
                 android:layout_marginStart="12dp"
                 android:text="@string/go_library"
                 android:textAppearance="@style/B5_Medium"
+                android:textColor="@color/sub_g1"
                 app:layout_constraintBottom_toBottomOf="@id/iv_go_to_library"
                 app:layout_constraintStart_toEndOf="@id/iv_go_to_library"
                 app:layout_constraintTop_toTopOf="@id/iv_go_to_library" />
@@ -313,6 +315,101 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_go_to_note" />
+
+        <TextView
+            android:id="@+id/tv_title_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="36dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/release_note"
+            android:textAppearance="@style/H5_SemiBold"
+            android:textColor="@color/sub_g1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_under" />
+
+        <HorizontalScrollView
+            android:id="@+id/layout_release"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/tv_title_release"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_release">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_list_release_wendy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_release_wendy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/img_home_release_note"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_release_wendy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/release_wendy_content"
+                    android:textAppearance="@style/H7_SemiBold"
+                    android:textColor="@color/sub_g1"
+                    app:layout_constraintStart_toStartOf="@id/iv_release_wendy"
+                    app:layout_constraintTop_toBottomOf="@id/iv_release_wendy" />
+
+                <View
+                    android:id="@+id/line_release"
+                    android:layout_width="300dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/sub_g4"
+                    app:layout_constraintStart_toStartOf="@id/tv_release_wendy"
+                    app:layout_constraintTop_toBottomOf="@id/tv_release_wendy" />
+
+                <TextView
+                    android:id="@+id/tv_release_author_wendy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="김윤지"
+                    android:textAppearance="@style/B3_Medium"
+                    android:textColor="@color/sub_g2"
+                    app:layout_constraintStart_toStartOf="@id/line_release"
+                    app:layout_constraintTop_toBottomOf="@id/line_release" />
+
+                <View
+                    android:id="@+id/line_release_author"
+                    android:layout_width="1dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="13dp"
+                    android:background="@color/sub_g4"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_release_author_wendy"
+                    app:layout_constraintStart_toEndOf="@id/tv_release_author_wendy"
+                    app:layout_constraintTop_toTopOf="@id/tv_release_author_wendy" />
+
+                <TextView
+                    android:id="@+id/tv_b_mark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:text="B"
+                    android:textAppearance="@style/B3_Medium"
+                    android:textColor="#4BDDF0"
+                    app:layout_constraintBottom_toBottomOf="@id/line_release_author"
+                    app:layout_constraintStart_toEndOf="@id/line_release_author"
+                    app:layout_constraintTop_toTopOf="@id/line_release_author" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </HorizontalScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
