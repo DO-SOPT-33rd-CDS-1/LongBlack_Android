@@ -29,6 +29,10 @@
         <activity
             android:name=".presentation.note_list.NoteListActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".presentation.library.LibraryActivity"
+            android:exported="false"></activity>
     </application>
 
 </manifest>

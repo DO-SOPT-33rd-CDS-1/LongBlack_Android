@@ -1,157 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/btn_library_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_arrow_left_small"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/tv_library_title"
-        style="@style/H3_SemiBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/library_title"
-        app:layout_constraintBottom_toBottomOf="@id/btn_library_back"
-        app:layout_constraintStart_toEndOf="@id/btn_library_back" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_library_tab_stamp"
-        style="@style/B3_Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/library_tab_stamp"
-        android:textColor="@color/sub_g1"
-        tools:ignore="MissingConstraints" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_library_tab_my_note"
-        style="@style/B3_Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/library_tab_my_note"
-        android:textColor="@color/sub_g3"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/btn_library_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_arrow_left_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_library_tab_sticker"
-        style="@style/B3_Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/library_tab_sticker"
-        android:textColor="@color/sub_g3"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tv_library_title"
+            style="@style/H3_SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_title"
+            app:layout_constraintBottom_toBottomOf="@id/btn_library_back"
+            app:layout_constraintStart_toEndOf="@id/btn_library_back"
+            app:layout_constraintTop_toTopOf="@+id/btn_library_back" />
 
-    <TextView
-        android:id="@+id/tv_library_tab_book_mark"
-        style="@style/B3_Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/library_tab_book_mark"
-        android:textColor="@color/sub_g3"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tv_library_tab_stamp"
+            style="@style/B3_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_tab_stamp"
+            android:textColor="@color/sub_g1"
+            tools:ignore="MissingConstraints" />
 
-    <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/container_library_tab"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:paddingVertical="4dp"
-        app:constraint_referenced_ids="tv_library_tab_stamp, tv_library_tab_my_note, tv_library_tab_sticker, tv_library_tab_book_mark"
-        app:flow_horizontalGap="24dp"
-        app:flow_maxElementsWrap="4"
-        app:flow_wrapMode="aligned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_library_title" />
+        <TextView
+            android:id="@+id/tv_library_tab_my_note"
+            style="@style/B3_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_tab_my_note"
+            android:textColor="@color/sub_g3"
+            tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/line_library_tab_line"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="6dp"
-        android:background="@color/sub_g6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
+        <TextView
+            android:id="@+id/tv_library_tab_sticker"
+            style="@style/B3_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_tab_sticker"
+            android:textColor="@color/sub_g3"
+            tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/extra_space_library_stamp_start"
-        android:layout_width="11dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@id/line_library_tab_selected"
-        app:layout_constraintEnd_toStartOf="@id/tv_library_tab_stamp"
-        app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
+        <TextView
+            android:id="@+id/tv_library_tab_book_mark"
+            style="@style/B3_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_tab_book_mark"
+            android:textColor="@color/sub_g3"
+            tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/extra_space_library_stamp_end"
-        android:layout_width="11dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@id/line_library_tab_selected"
-        app:layout_constraintStart_toEndOf="@id/tv_library_tab_stamp"
-        app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/container_library_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingVertical="4dp"
+            app:constraint_referenced_ids="tv_library_tab_stamp, tv_library_tab_my_note, tv_library_tab_sticker, tv_library_tab_book_mark"
+            app:flow_horizontalGap="24dp"
+            app:flow_maxElementsWrap="4"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_library_title" />
 
-    <View
-        android:id="@+id/line_library_tab_selected"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/sub_g1"
-        app:layout_constraintEnd_toEndOf="@id/extra_space_library_stamp_end"
-        app:layout_constraintStart_toStartOf="@id/extra_space_library_stamp_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
+        <View
+            android:id="@+id/line_library_tab_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/sub_g6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
 
-    <TextView
-        android:id="@+id/btn_library_not_exchanged"
-        style="@style/B5_Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/shape_border_43"
-        android:backgroundTint="@color/sub_g5"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="4dp"
-        android:text="@string/library_not_exchange"
-        android:textColor="@color/sub_g1"
-        app:layout_constraintEnd_toEndOf="@id/line_library_tab_selected"
-        app:layout_constraintTop_toBottomOf="@id/line_library_tab_line" />
+        <View
+            android:id="@+id/extra_space_library_stamp_start"
+            android:layout_width="11dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@id/line_library_tab_selected"
+            app:layout_constraintEnd_toStartOf="@id/tv_library_tab_stamp"
+            app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
 
-    <TextView
-        android:id="@+id/btn_library_exchanged"
-        style="@style/B6_Regular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/shape_border_43_stroke_g5"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="4dp"
-        android:text="@string/library_exchange"
-        android:textColor="@color/sub_g2"
-        app:layout_constraintBottom_toBottomOf="@id/btn_library_not_exchanged"
-        app:layout_constraintStart_toEndOf="@id/btn_library_not_exchanged"
-        app:layout_constraintTop_toTopOf="@id/btn_library_not_exchanged" />
+        <View
+            android:id="@+id/extra_space_library_stamp_end"
+            android:layout_width="11dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@id/line_library_tab_selected"
+            app:layout_constraintStart_toEndOf="@id/tv_library_tab_stamp"
+            app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
 
-    <TextView
-        android:id="@+id/tv_library_stamp_card_title"
-        style="@style/H7_SemiBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/library_stamp_card_title"
-        app:layout_constraintStart_toStartOf="@id/btn_library_back"
-        app:layout_constraintTop_toBottomOf="@id/btn_library_not_exchanged" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/line_library_tab_selected"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/sub_g1"
+            app:layout_constraintEnd_toEndOf="@id/extra_space_library_stamp_end"
+            app:layout_constraintStart_toStartOf="@id/extra_space_library_stamp_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
+
+        <TextView
+            android:id="@+id/btn_library_not_exchanged"
+            style="@style/B5_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/shape_border_43"
+            android:backgroundTint="@color/sub_g5"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:text="@string/library_not_exchange"
+            android:textColor="@color/sub_g1"
+            app:layout_constraintEnd_toEndOf="@id/line_library_tab_selected"
+            app:layout_constraintTop_toBottomOf="@id/line_library_tab_line" />
+
+        <TextView
+            android:id="@+id/btn_library_exchanged"
+            style="@style/B6_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/shape_border_43_stroke_g5"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:text="@string/library_exchange"
+            android:textColor="@color/sub_g2"
+            app:layout_constraintBottom_toBottomOf="@id/btn_library_not_exchanged"
+            app:layout_constraintStart_toEndOf="@id/btn_library_not_exchanged"
+            app:layout_constraintTop_toTopOf="@id/btn_library_not_exchanged" />
+
+        <TextView
+            android:id="@+id/tv_library_stamp_card_title"
+            style="@style/H7_SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/library_stamp_card_title"
+            app:layout_constraintStart_toStartOf="@id/btn_library_back"
+            app:layout_constraintTop_toBottomOf="@id/btn_library_not_exchanged" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
