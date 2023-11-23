@@ -129,6 +129,7 @@
             android:layout_marginTop="22dp"
             android:background="@drawable/shape_border_43"
             android:backgroundTint="@color/sub_g5"
+            android:lineSpacingExtra="4dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="4dp"
             android:text="@string/library_not_exchange"
@@ -143,6 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:background="@drawable/shape_border_43_stroke_g5"
+            android:lineSpacingExtra="4dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="4dp"
             android:text="@string/library_exchange"
@@ -158,8 +160,194 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="24dp"
+            android:lineSpacingExtra="5dp"
             android:text="@string/library_stamp_card_title"
             app:layout_constraintStart_toStartOf="@id/btn_library_back"
             app:layout_constraintTop_toBottomOf="@id/btn_library_not_exchanged" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_library_stamp_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_border_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_library_stamp_card_title">
+
+            <TextView
+                android:id="@+id/tv_library_stamp_card_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:paddingStart="20dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="34dp"
+                android:text="카드2"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line_library_stamp_card"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/sub_g5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_library_stamp_card_name" />
+
+            <GridLayout
+                android:id="@+id/container_library_stamp_sticker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="3"
+                app:layout_constraintTop_toBottomOf="@id/line_library_stamp_card">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="26dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="26dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="26dp"
+                    android:adjustViewBounds="true"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_coffee_sticker_off_small" />
+            </GridLayout>
+
+            <TextView
+                style="@style/B3_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border_8_bottom"
+                android:backgroundTint="@color/sub_g5"
+                android:gravity="center"
+                android:paddingVertical="14dp"
+                android:text="샷으로 교환하기"
+                android:textColor="@color/sub_g4"
+                app:layout_constraintBottom_toBottomOf="@id/container_library_stamp_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_library_stamp_sticker" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
