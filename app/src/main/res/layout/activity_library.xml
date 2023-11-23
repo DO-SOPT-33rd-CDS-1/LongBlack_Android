@@ -63,12 +63,13 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/container_library_tab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:paddingVertical="4dp"
         app:constraint_referenced_ids="tv_library_tab_stamp, tv_library_tab_my_note, tv_library_tab_sticker, tv_library_tab_book_mark"
-        app:flow_horizontalGap="28dp"
+        app:flow_horizontalGap="24dp"
         app:flow_maxElementsWrap="4"
         app:flow_wrapMode="aligned"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,4 +113,45 @@
         app:layout_constraintEnd_toEndOf="@id/extra_space_library_stamp_end"
         app:layout_constraintStart_toStartOf="@id/extra_space_library_stamp_start"
         app:layout_constraintTop_toBottomOf="@id/tv_library_tab_stamp" />
+
+    <TextView
+        android:id="@+id/btn_library_not_exchanged"
+        style="@style/B5_Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/shape_border_43"
+        android:backgroundTint="@color/sub_g5"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:text="@string/library_not_exchange"
+        android:textColor="@color/sub_g1"
+        app:layout_constraintEnd_toEndOf="@id/line_library_tab_selected"
+        app:layout_constraintTop_toBottomOf="@id/line_library_tab_line" />
+
+    <TextView
+        android:id="@+id/btn_library_exchanged"
+        style="@style/B6_Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shape_border_43_stroke_g5"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:text="@string/library_exchange"
+        android:textColor="@color/sub_g2"
+        app:layout_constraintBottom_toBottomOf="@id/btn_library_not_exchanged"
+        app:layout_constraintStart_toEndOf="@id/btn_library_not_exchanged"
+        app:layout_constraintTop_toTopOf="@id/btn_library_not_exchanged" />
+
+    <TextView
+        android:id="@+id/tv_library_stamp_card_title"
+        style="@style/H7_SemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/library_stamp_card_title"
+        app:layout_constraintStart_toStartOf="@id/btn_library_back"
+        app:layout_constraintTop_toBottomOf="@id/btn_library_not_exchanged" />
 </androidx.constraintlayout.widget.ConstraintLayout>

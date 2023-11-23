@@ -16,4 +16,7 @@
     <string name="library_tab_my_note">내 노트</string>
     <string name="library_tab_sticker">스티커</string>
     <string name="library_tab_book_mark">북마크</string>
+    <string name="library_not_exchange">미교환</string>
+    <string name="library_exchange">교환완료</string>
+    <string name="library_stamp_card_title">진행 중인 스탬프카드</string>
 </resources>
