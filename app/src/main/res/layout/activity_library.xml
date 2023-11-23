@@ -180,14 +180,25 @@
                 android:id="@+id/tv_library_stamp_card_name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/pretendard_semibold"
-                android:paddingStart="20dp"
                 android:paddingTop="16dp"
-                android:paddingBottom="34dp"
                 android:text="카드2"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_library_stamp_card_description"
+                style="@style/B8_Light"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="12dp"
+                android:text="스탬프 12개를 다 채우면 샷 1개를 증정합니다!"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_library_stamp_card_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_library_stamp_card_name" />
 
             <View
                 android:id="@+id/line_library_stamp_card"
@@ -196,7 +207,7 @@
                 android:background="@color/sub_g5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_library_stamp_card_name" />
+                app:layout_constraintTop_toBottomOf="@id/tv_library_stamp_card_description" />
 
             <GridLayout
                 android:id="@+id/container_library_stamp_sticker"
@@ -349,5 +360,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/container_library_stamp_sticker" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="미교환 스탬프카드"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/tv_library_stamp_card_title"
+            app:layout_constraintTop_toBottomOf="@id/container_library_stamp_card" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
