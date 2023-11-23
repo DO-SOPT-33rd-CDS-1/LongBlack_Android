@@ -2,6 +2,7 @@ package com.example.longdroid.presentation.article
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityArticleBinding
 import com.example.longdroid.util.binding.BindingActivity
@@ -13,28 +14,57 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        observeBookmark()
-        updateBookmarkState()
+        observeLike()
+        observeBookMark()
+        setupClickListeners()
     }
 
-    private fun updateBookmarkState() {
-        binding.ivArticleBookmark.setOnSingleClickListener {
-            articleViewModel.setBookMarkState()
+    private fun setupClickListeners() {
+        with(binding) {
+            ivArticleLike.setOnSingleClickListener {
+                articleViewModel.setLikeState()
+            }
+            ivArticleReadMark.setOnSingleClickListener {
+                setTransparentBackground()
+
+                // TODO 나중에 어댑터에서 문단 클릭 이벤트 처리 이후로 옴길 예정
+                // articleViewModel.setBookMarkState()
+            }
         }
     }
 
-    private fun observeBookmark() {
-        articleViewModel.isBookMarked.observe(this) { isBookMarked ->
-            updateBookmarkUI(isBookMarked)
+    private fun setTransparentBackground() {
+        binding.clArticleBody.foreground =
+            ContextCompat.getDrawable(this, R.color.transparent_background)
+    }
+
+    private fun observeBookMark() {
+        articleViewModel.isBookMarked.observe(this) { isBookMark ->
+            updateBookMarkUI(isBookMark)
         }
     }
 
-    private fun updateBookmarkUI(isBookMarked: Boolean) {
-        val bookMark = if (isBookMarked) {
+    private fun observeLike() {
+        articleViewModel.isLike.observe(this) { isArticleLike ->
+            updateLikeUI(isArticleLike)
+        }
+    }
+
+    private fun updateLikeUI(isLike: Boolean) {
+        val likeImage = if (isLike) {
             R.drawable.ic_book_mark_on_small
         } else {
             R.drawable.ic_book_mark_off_small
         }
-        binding.ivArticleBookmark.setImageResource(bookMark)
+        binding.ivArticleLike.setImageResource(likeImage)
+    }
+
+    private fun updateBookMarkUI(isBookMark: Boolean) {
+        val bookMarkImage = if (isBookMark) {
+            R.drawable.ic_btn_delete_read_mark
+        } else {
+            R.drawable.ic_btn_add_read_mark
+        }
+        binding.ivArticleReadMark.setImageResource(bookMarkImage)
     }
 }
