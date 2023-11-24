@@ -14,7 +14,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="38dp">
 
             <ImageView
@@ -189,7 +189,7 @@
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/pretendard_semibold"
                     android:paddingTop="16dp"
-                    android:text="카드2"
+                    android:text="@string/library_stamp_card_name"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -201,7 +201,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:paddingBottom="12dp"
-                    android:text="스탬프 12개를 다 채우면 샷 1개를 증정합니다!"
+                    android:text="@string/library_stamp_card_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_library_stamp_card_name"
                     app:layout_constraintTop_toBottomOf="@id/tv_library_stamp_card_name" />
@@ -369,7 +369,7 @@
                     android:backgroundTint="@color/sub_g5"
                     android:gravity="center"
                     android:paddingVertical="14dp"
-                    android:text="샷으로 교환하기"
+                    android:text="@string/library_shot_exchange"
                     android:textColor="@color/sub_g4"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -383,7 +383,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="52dp"
                 android:fontFamily="@font/pretendard_semibold"
-                android:text="미교환 스탬프카드"
+                android:text="@string/library_not_exchange_stamp_card"
                 android:textColor="@color/sub_g1"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@id/tv_library_stamp_card_title"
@@ -395,7 +395,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
-                android:text="총 개수 : 1개"
+                android:text="@string/library_not_exchange_stamp_card_count"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintBottom_toBottomOf="@id/tv_library_not_exchange"
                 app:layout_constraintEnd_toEndOf="@id/container_library_stamp_card"
@@ -427,7 +427,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="26dp"
-                    android:text="카드1"
+                    android:text="@string/library_not_exchange_stamp_card_name"
                     android:textColor="@color/sub_g2"
                     app:layout_constraintStart_toEndOf="@id/iv_library_cup_card"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -439,7 +439,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="2023.11.13"
+                    android:text="@string/library_not_exchange_exp"
                     android:textColor="@color/sub_g3"
                     app:layout_constraintStart_toStartOf="@id/tv_library_not_exchange_stamp_card_name"
                     app:layout_constraintTop_toBottomOf="@id/tv_library_not_exchange_stamp_card_name" />
@@ -452,7 +452,7 @@
                     android:background="@drawable/shape_border_23_stroke"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
-                    android:text="교환하기"
+                    android:text="@string/library_exchange_shot"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -476,7 +476,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="32dp"
                 android:paddingHorizontal="4dp"
-                android:text="•"
+                android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/line_library_bot" />
@@ -489,7 +489,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="14dp"
                 android:lineSpacingExtra="4dp"
-                android:text="스탬프 획득하지 않은 읽은 노트도 다시 접속해 스탬프를\n획득할 수 있습니다."
+                android:text="@string/library_caution_1"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toEndOf="@id/tv_library_bullet_1"
                 app:layout_constraintTop_toBottomOf="@id/line_library_bot"
@@ -503,7 +503,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
-                android:text="•"
+                android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_1" />
@@ -516,7 +516,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="14dp"
                 android:lineSpacingExtra="4dp"
-                android:text="노트 당 스탬프 획득은 최초 1회만 가능합니다."
+                android:text="@string/library_caution_2"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toEndOf="@id/tv_library_bullet_2"
                 app:layout_constraintTop_toBottomOf="@id/line_library_bot"
@@ -530,7 +530,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
-                android:text="•"
+                android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_2" />
@@ -543,7 +543,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="14dp"
                 android:lineSpacingExtra="4dp"
-                android:text="샷으로 교환 후 14일 이내(교환일 기준)에 사용하셔야 합니다."
+                android:text="@string/library_caution_3"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toEndOf="@id/tv_library_bullet_3"
                 app:layout_constraintTop_toBottomOf="@id/line_library_bot"
@@ -557,7 +557,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
-                android:text="•"
+                android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_3" />
@@ -570,7 +570,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="14dp"
                 android:lineSpacingExtra="4dp"
-                android:text="증정으로 받은 샷은 환불 받을 수 없습니다."
+                android:text="@string/library_caution_4"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toEndOf="@id/tv_library_bullet_4"
                 app:layout_constraintTop_toBottomOf="@id/line_library_bot"
@@ -584,7 +584,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
-                android:text="•"
+                android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_4" />
@@ -597,7 +597,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="14dp"
                 android:lineSpacingExtra="4dp"
-                android:text="샷은 멤버십을 유지하고 있어야 사용이 가능합니다."
+                android:text="@string/library_caution_5"
                 android:textColor="@color/sub_g3"
                 app:layout_constraintStart_toEndOf="@id/tv_library_bullet_5"
                 app:layout_constraintTop_toBottomOf="@id/line_library_bot"
