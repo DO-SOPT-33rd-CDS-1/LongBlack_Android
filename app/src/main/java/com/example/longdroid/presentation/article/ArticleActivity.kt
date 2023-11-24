@@ -3,6 +3,7 @@ package com.example.longdroid.presentation.article
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import coil.load
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityArticleBinding
 import com.example.longdroid.util.binding.BindingActivity
@@ -56,7 +57,7 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         } else {
             R.drawable.ic_book_mark_off_small
         }
-        binding.ivArticleLike.setImageResource(likeImage)
+        binding.ivArticleLike.load(likeImage)
     }
 
     private fun updateBookMarkUI(isBookMark: Boolean) {
@@ -65,6 +66,6 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         } else {
             R.drawable.ic_btn_add_read_mark
         }
-        binding.ivArticleReadMark.setImageResource(bookMarkImage)
+        binding.ivArticleReadMark.load(bookMarkImage)
     }
 }
