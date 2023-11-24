@@ -28,11 +28,13 @@
 
         <activity
             android:name=".presentation.note_list.NoteListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".presentation.library.LibraryActivity"
-            android:exported="false"></activity>
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
