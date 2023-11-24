@@ -500,12 +500,11 @@
                 style="@style/B6_Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
                 android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_library_bullet_1"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_1" />
 
             <TextView
@@ -527,12 +526,11 @@
                 style="@style/B6_Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
                 android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_library_bullet_2"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_2" />
 
             <TextView
@@ -554,12 +552,11 @@
                 style="@style/B6_Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
                 android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_library_bullet_3"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_3" />
 
             <TextView
@@ -581,12 +578,11 @@
                 style="@style/B6_Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
                 android:layout_marginTop="12dp"
                 android:paddingHorizontal="4dp"
                 android:text="@string/library_bullet"
                 android:textColor="@color/sub_g3"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_library_bullet_4"
                 app:layout_constraintTop_toBottomOf="@id/tv_library_caution_4" />
 
             <TextView
