@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -128,22 +129,25 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="290dp"
+                android:layout_height="260dp"
                 android:background="@color/sand"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_head_structure"
-                android:layout_width="360dp"
-                android:layout_height="363dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="24dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_note_structure"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -562,6 +566,103 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </HorizontalScrollView>
+
+        <View
+            android:id="@+id/line_list"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="44dp"
+            android:background="@color/sub_g6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_release" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_list"
+            app:layout_constraintBottom_toTopOf="@id/iv_bottom_navi">
+
+            <TextView
+                android:id="@+id/tv_title_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/event"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="20dp"
+                android:textAppearance="@style/H5_SemiBold"
+                android:textColor="@color/sub_g1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="12dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_arrow2_left_big"
+                app:layout_constraintEnd_toStartOf="@id/btn_next"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow2_right_big"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/btn_before"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/iv_event_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="84dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_home_event_blue"
+                app:layout_constraintBottom_toTopOf="@id/iv_event_curation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+            <ImageView
+                android:id="@+id/iv_event_curation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="37dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_home_event_bottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_event_list"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_bottom_navi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_navigationbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
