@@ -310,7 +310,7 @@
             android:id="@+id/line_under"
             android:layout_width="match_parent"
             android:layout_height="8dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="27dp"
             android:background="@color/sub_g6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -338,77 +338,229 @@
             app:layout_constraintTop_toBottomOf="@id/tv_title_release">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_list_release_wendy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/iv_release_wendy"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_list_release_wendy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/img_home_release_note"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tv_release_wendy"
+                    <ImageView
+                        android:id="@+id/iv_release_wendy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/img_home_release_note"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_release_wendy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/release_wendy_content"
+                        android:textAppearance="@style/H7_SemiBold"
+                        android:textColor="@color/sub_g1"
+                        app:layout_constraintStart_toStartOf="@id/iv_release_wendy"
+                        app:layout_constraintTop_toBottomOf="@id/iv_release_wendy" />
+
+                    <View
+                        android:id="@+id/line_release"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/sub_g4"
+                        app:layout_constraintStart_toStartOf="@id/tv_release_wendy"
+                        app:layout_constraintTop_toBottomOf="@id/tv_release_wendy" />
+
+                    <TextView
+                        android:id="@+id/tv_release_author_wendy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="김윤지"
+                        android:textAppearance="@style/B3_Medium"
+                        android:textColor="@color/sub_g2"
+                        app:layout_constraintStart_toStartOf="@id/line_release"
+                        app:layout_constraintTop_toBottomOf="@id/line_release" />
+
+                    <View
+                        android:id="@+id/line_release_author"
+                        android:layout_width="1dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="13dp"
+                        android:background="@color/sub_g4"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_release_author_wendy"
+                        app:layout_constraintStart_toEndOf="@id/tv_release_author_wendy"
+                        app:layout_constraintTop_toTopOf="@id/tv_release_author_wendy" />
+
+                    <TextView
+                        android:id="@+id/tv_b_mark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:text="B"
+                        android:textAppearance="@style/B3_Medium"
+                        android:textColor="#4BDDF0"
+                        app:layout_constraintBottom_toBottomOf="@id/line_release_author"
+                        app:layout_constraintStart_toEndOf="@id/line_release_author"
+                        app:layout_constraintTop_toTopOf="@id/line_release_author" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_list_release_lck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/release_wendy_content"
-                    android:textAppearance="@style/H7_SemiBold"
-                    android:textColor="@color/sub_g1"
-                    app:layout_constraintStart_toStartOf="@id/iv_release_wendy"
-                    app:layout_constraintTop_toBottomOf="@id/iv_release_wendy" />
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_list_release_wendy"
+                    app:layout_constraintTop_toTopOf="@id/layout_list_release_wendy">
 
-                <View
-                    android:id="@+id/line_release"
-                    android:layout_width="300dp"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/sub_g4"
-                    app:layout_constraintStart_toStartOf="@id/tv_release_wendy"
-                    app:layout_constraintTop_toBottomOf="@id/tv_release_wendy" />
+                    <ImageView
+                        android:id="@+id/iv_release_lck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/img_home_release_lck"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tv_release_author_wendy"
+                    <TextView
+                        android:id="@+id/tv_release_lck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/lck_content"
+                        android:textAppearance="@style/H7_SemiBold"
+                        android:textColor="@color/sub_g1"
+                        app:layout_constraintStart_toStartOf="@id/iv_release_lck"
+                        app:layout_constraintTop_toBottomOf="@id/iv_release_lck" />
+
+                    <View
+                        android:id="@+id/line_release_lck"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/sub_g4"
+                        app:layout_constraintStart_toStartOf="@id/tv_release_lck"
+                        app:layout_constraintTop_toBottomOf="@id/tv_release_lck" />
+
+                    <TextView
+                        android:id="@+id/tv_release_author_lck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="롱블랙"
+                        android:textAppearance="@style/B3_Medium"
+                        android:textColor="@color/sub_g2"
+                        app:layout_constraintStart_toStartOf="@id/line_release_lck"
+                        app:layout_constraintTop_toBottomOf="@id/line_release_lck" />
+
+                    <View
+                        android:id="@+id/line_release_author_lck"
+                        android:layout_width="1dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="13dp"
+                        android:background="@color/sub_g4"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_release_author_lck"
+                        app:layout_constraintStart_toEndOf="@id/tv_release_author_lck"
+                        app:layout_constraintTop_toTopOf="@id/tv_release_author_lck" />
+
+                    <TextView
+                        android:id="@+id/tv_b_mark_lck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:text="B"
+                        android:textAppearance="@style/B3_Medium"
+                        android:textColor="#4BDDF0"
+                        app:layout_constraintBottom_toBottomOf="@id/line_release_author_lck"
+                        app:layout_constraintStart_toEndOf="@id/line_release_author_lck"
+                        app:layout_constraintTop_toTopOf="@id/line_release_author_lck" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_list_release_woman"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="김윤지"
-                    android:textAppearance="@style/B3_Medium"
-                    android:textColor="@color/sub_g2"
-                    app:layout_constraintStart_toStartOf="@id/line_release"
-                    app:layout_constraintTop_toBottomOf="@id/line_release" />
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_list_release_lck"
+                    app:layout_constraintTop_toTopOf="@id/layout_list_release_wendy">
 
-                <View
-                    android:id="@+id/line_release_author"
-                    android:layout_width="1dp"
-                    android:layout_height="12dp"
-                    android:layout_marginStart="13dp"
-                    android:background="@color/sub_g4"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_release_author_wendy"
-                    app:layout_constraintStart_toEndOf="@id/tv_release_author_wendy"
-                    app:layout_constraintTop_toTopOf="@id/tv_release_author_wendy" />
+                    <ImageView
+                        android:id="@+id/iv_release_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/img_home_release_woman"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tv_b_mark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:text="B"
-                    android:textAppearance="@style/B3_Medium"
-                    android:textColor="#4BDDF0"
-                    app:layout_constraintBottom_toBottomOf="@id/line_release_author"
-                    app:layout_constraintStart_toEndOf="@id/line_release_author"
-                    app:layout_constraintTop_toTopOf="@id/line_release_author" />
+                    <TextView
+                        android:id="@+id/tv_release_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/woman_content"
+                        android:textAppearance="@style/H7_SemiBold"
+                        android:textColor="@color/sub_g1"
+                        app:layout_constraintStart_toStartOf="@id/iv_release_woman"
+                        app:layout_constraintTop_toBottomOf="@id/iv_release_woman" />
+
+                    <View
+                        android:id="@+id/line_release_woman"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/sub_g4"
+                        app:layout_constraintStart_toStartOf="@id/tv_release_woman"
+                        app:layout_constraintTop_toBottomOf="@id/tv_release_woman" />
+
+                    <TextView
+                        android:id="@+id/tv_release_author_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="롱블랙"
+                        android:textAppearance="@style/B3_Medium"
+                        android:textColor="@color/sub_g2"
+                        app:layout_constraintStart_toStartOf="@id/line_release_woman"
+                        app:layout_constraintTop_toBottomOf="@id/line_release_woman" />
+
+                    <View
+                        android:id="@+id/line_release_author_woman"
+                        android:layout_width="1dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="13dp"
+                        android:background="@color/sub_g4"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_release_author_woman"
+                        app:layout_constraintStart_toEndOf="@id/tv_release_author_woman"
+                        app:layout_constraintTop_toTopOf="@id/tv_release_author_woman" />
+
+                    <TextView
+                        android:id="@+id/tv_b_mark_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:text="B"
+                        android:textAppearance="@style/B3_Medium"
+                        android:textColor="#4BDDF0"
+                        app:layout_constraintBottom_toBottomOf="@id/line_release_author_woman"
+                        app:layout_constraintStart_toEndOf="@id/line_release_author_woman"
+                        app:layout_constraintTop_toTopOf="@id/line_release_author_woman" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
         </HorizontalScrollView>
 
 
