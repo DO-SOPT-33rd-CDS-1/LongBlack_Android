@@ -9,4 +9,28 @@
     <string name="note_list_get_stamp">스탬프 받은 노트</string>
     <string name="note_list_grade_5">평점 5점 준 노트</string>
     <string name="note_list_book_mark">북마크 한 노트</string>
+
+    <!-- 라이브러리 뷰-->
+    <string name="library_title">라이브러리</string>
+    <string name="library_tab_stamp">스탬프</string>
+    <string name="library_tab_my_note">내 노트</string>
+    <string name="library_tab_sticker">스티커</string>
+    <string name="library_tab_book_mark">북마크</string>
+    <string name="library_not_exchange">미교환</string>
+    <string name="library_exchange">교환완료</string>
+    <string name="library_stamp_card_title">진행 중인 스탬프카드</string>
+    <string name="library_stamp_card_name">카드2</string>
+    <string name="library_stamp_card_description">스탬프 12개를 다 채우면 샷 1개를 증정합니다!</string>
+    <string name="library_shot_exchange">샷으로 교환하기</string>
+    <string name="library_not_exchange_stamp_card">미교환 스탬프카드</string>
+    <string name="library_not_exchange_stamp_card_count">총 개수 : 1개</string>
+    <string name="library_not_exchange_stamp_card_name">카드1</string>
+    <string name="library_not_exchange_exp">2023.11.13</string>
+    <string name="library_exchange_shot">교환하기</string>
+    <string name="library_bullet">•</string>
+    <string name="library_caution_1">스탬프 획득하지 않은 읽은 노트도 다시 접속해 스탬프를\n획득할 수 있습니다.</string>
+    <string name="library_caution_2">노트 당 스탬프 획득은 최초 1회만 가능합니다.</string>
+    <string name="library_caution_3">샷으로 교환 후 14일 이내(교환일 기준)에 사용하셔야 합니다.</string>
+    <string name="library_caution_4">증정으로 받은 샷은 환불 받을 수 없습니다.</string>
+    <string name="library_caution_5">샷은 멤버십을 유지하고 있어야 사용이 가능합니다.</string>
 </resources>
