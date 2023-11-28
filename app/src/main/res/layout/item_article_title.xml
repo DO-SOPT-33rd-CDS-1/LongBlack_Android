@@ -39,7 +39,7 @@
         android:textColor="@color/sub_g1"
         app:layout_constraintStart_toStartOf="@id/view_article_top"
         app:layout_constraintTop_toBottomOf="@id/view_article_top"
-        tools:text="오픈갤러리 : 내 거실이\n갤러리, 미술 시장의\n빈틈을 파고든 원화 구독\n서비스" />
+        tools:text="오픈갤러리 : 내 거실이\n 갤러리, 미술 시장의\n 빈틈을 파고든 원화 구독\n 서비스" />
 
     <ImageView
         android:id="@+id/iv_article_coffee"
@@ -114,6 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:paddingBottom="40dp"
         android:src="@drawable/img_article_profile"
         app:layout_constraintStart_toStartOf="@id/gl_start"
         app:layout_constraintTop_toBottomOf="@id/view_article_bottom" />
