@@ -20,4 +20,5 @@
     <color name="green">#A4F4A4</color>
     <color name="red">#FF5126</color>
     <color name="orange">#2EFF6543</color>
+    <color name="transparent_background">#73141414</color>
 </resources>

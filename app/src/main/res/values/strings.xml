@@ -1,17 +1,53 @@
 <resources>
     <string name="app_name">LongDroid</string>
     <string name="binding_error">에러가 발생했습니다</string>
-    <string name="no_read">이시간이지나면\n읽을수없습니다.</string>
-    <string name="todaynote_content">오픈갤러리 : 내 거실이 갤러리, 미술 시장의\n빈틈을 파고든 원화 구독 서비스</string>
-    <string name="todaynote_title">오늘의 노트</string>
-    <string name="comunity_title">노트 커뮤니티</string>
-    <string name="comunity_content">“사람이 없어도 운영이 안되는 경우도 간혹 있던\n데...😢😢”</string>
-    <string name="all_note">전체 노트 보기</string>
-    <string name="go_library">라이브러리 가기</string>
-    <string name="release_note">공개 예정 노트</string>
-    <string name="release_wendy_content">웬디 맥노트 : 뉴옥타임즈 그래픽 저널리스트\n가, 낯선 이들을 그리며 배운것들</string>
-    <string name="release_lck_content">LCK : ‘소환사의 협곡’은 어떻게 MZ의 놀이터\n가 됐나</string>
-    <string name="lck_content">LCK : ‘소환사의 협곡’은 어떻게 MZ의 놀이터\n가 됐나</string>
-    <string name="woman_content">마케터 숭 : 고유함을 묻고 기록하고 알릴 때,\n 나라는 브랜드는 태어난다</string>
-    <string name="event">이벤트</string>
+
+    <!-- 노트 리스트 뷰 -->
+    <string name="note_list_title">노트</string>
+    <string name="note_list_search">검색어를 입력하세요.</string>
+    <string name="note_list_not_read">안 읽은 노트</string>
+    <string name="note_list_get_stamp">스탬프 받은 노트</string>
+    <string name="note_list_grade_5">평점 5점 준 노트</string>
+    <string name="note_list_book_mark">북마크 한 노트</string>
+
+    <!-- 라이브러리 뷰-->
+    <string name="library_title">라이브러리</string>
+    <string name="library_tab_stamp">스탬프</string>
+    <string name="library_tab_my_note">내 노트</string>
+    <string name="library_tab_sticker">스티커</string>
+    <string name="library_tab_book_mark">북마크</string>
+    <string name="library_not_exchange">미교환</string>
+    <string name="library_exchange">교환완료</string>
+    <string name="library_stamp_card_title">진행 중인 스탬프카드</string>
+    <string name="library_stamp_card_name">카드2</string>
+    <string name="library_stamp_card_description">스탬프 12개를 다 채우면 샷 1개를 증정합니다!</string>
+    <string name="library_shot_exchange">샷으로 교환하기</string>
+    <string name="library_not_exchange_stamp_card">미교환 스탬프카드</string>
+    <string name="library_not_exchange_stamp_card_count">총 개수 : 1개</string>
+    <string name="library_not_exchange_stamp_card_name">카드1</string>
+    <string name="library_not_exchange_exp">2023.11.13</string>
+    <string name="library_exchange_shot">교환하기</string>
+    <string name="library_bullet">•</string>
+    <string name="library_caution_1">스탬프 획득하지 않은 읽은 노트도 다시 접속해 스탬프를\n획득할 수 있습니다.</string>
+    <string name="library_caution_2">노트 당 스탬프 획득은 최초 1회만 가능합니다.</string>
+    <string name="library_caution_3">샷으로 교환 후 14일 이내(교환일 기준)에 사용하셔야 합니다.</string>
+    <string name="library_caution_4">증정으로 받은 샷은 환불 받을 수 없습니다.</string>
+    <string name="library_caution_5">샷은 멤버십을 유지하고 있어야 사용이 가능합니다.</string>
+
+    <!--홈 뷰-->
+    <string name="home_time_read">이시간이지나면\n읽을수없습니다.</string>
+    <string name="home_today_note_content">오픈갤러리 : 내 거실이 갤러리, 미술 시장의\n빈틈을 파고든 원화 구독 서비스</string>
+    <string name="home_today_note_title">오늘의 노트</string>
+    <string name="home_comunity_title">노트 커뮤니티</string>
+    <string name="home_comunity_content">“사람이 없어도 운영이 안되는 경우도 간혹 있던\n데...😢😢”</string>
+    <string name="home_go_to_note">전체 노트 보기</string>
+    <string name="home_go_to_library">라이브러리 가기</string>
+    <string name="home_release_note_title">공개 예정 노트</string>
+    <string name="home_release_wendy_content">웬디 맥노트 : 뉴옥타임즈 그래픽 저널리스트\n가, 낯선 이들을 그리며 배운것들</string>
+    <string name="home_release_lck_content">LCK : ‘소환사의 협곡’은 어떻게 MZ의 놀이터\n가 됐나</string>
+    <string name="home_release_soong_content">마케터 숭 : 고유함을 묻고 기록하고 알릴 때,\n 나라는 브랜드는 태어난다</string>
+    <string name="home_event_title">이벤트</string>
+    <string name="home_release_mark_b">B</string>
+    <string name="home_release_author_long_black">롱블랙</string>
+    <string name="home_release_author_yoonji">김윤지</string>
 </resources>

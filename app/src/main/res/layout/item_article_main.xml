@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <TextView
+        android:id="@+id/tv_article_subtitle"
+        style="@style/H6_Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="6dp"
+        android:textColor="@color/sub_g1"
+        app:layout_constraintStart_toStartOf="@id/gl_start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="롱블랙 프렌즈 L" />
+
+    <TextView
+        android:id="@+id/tv_article_main"
+        style="@style/B1_Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:lineSpacingExtra="10dp"
+        android:textColor="@color/sub_g1"
+        app:layout_constraintStart_toStartOf="@id/gl_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_article_subtitle"
+        tools:text="얼마 전 B네 집에 놀러갔는데, 거실에 못 보던\n그림이 걸려있더라. 물감 결이 살아있는 걸" />
+
+    <TextView
+        android:id="@+id/tv_article_main_last"
+        style="@style/B1_Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:lineSpacingExtra="10dp"
+        android:textColor="@color/sub_g1"
+        app:layout_constraintStart_toStartOf="@id/gl_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_article_main"
+        tools:text="보니 원화였어.\n\n" />
+
+    <ImageView
+        android:id="@+id/iv_article_read_mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_read_mark"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/tv_article_main_last"
+        app:layout_constraintTop_toTopOf="@+id/tv_article_main_last" />
+</androidx.constraintlayout.widget.ConstraintLayout>

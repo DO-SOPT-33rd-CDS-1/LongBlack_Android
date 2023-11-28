@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -46,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/pretendard_medium"
-                android:text="@string/no_read"
+                android:text="@string/home_time_read"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/iv_clock"
                 app:layout_constraintStart_toEndOf="@id/iv_clock"
@@ -164,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="27dp"
-                android:text="@string/todaynote_title"
+                android:text="@string/home_today_note_title"
                 android:textAppearance="@style/B3_Medium"
                 android:textColor="@color/main_orange"
                 app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:lineSpacingExtra="6sp"
-                android:text="@string/todaynote_content"
+                android:text="@string/home_today_note_content"
                 android:textAppearance="@style/H5_SemiBold"
                 android:textColor="@color/sub_g1"
                 app:layout_constraintStart_toStartOf="@id/tv_today_note_title"
@@ -187,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="@string/comunity_title"
+                android:text="@string/home_comunity_title"
                 android:textAppearance="@style/B3_Medium"
                 android:textColor="@color/main_orange"
                 app:layout_constraintStart_toStartOf="@id/tv_today_note_content"
@@ -209,7 +208,7 @@
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/pretendard_regular"
                 android:lineSpacingExtra="5dp"
-                android:text="@string/comunity_content"
+                android:text="@string/home_comunity_content"
                 android:textColor="@color/sub_g1"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/iv_comunity_profile"
@@ -249,7 +248,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:text="@string/all_note"
+                android:text="@string/home_go_to_note"
                 android:textAppearance="@style/B5_Medium"
                 android:textColor="@color/sub_g1"
                 app:layout_constraintBottom_toBottomOf="@id/iv_go_to_note"
@@ -291,7 +290,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:text="@string/go_library"
+                android:text="@string/home_go_to_library"
                 android:textAppearance="@style/B5_Medium"
                 android:textColor="@color/sub_g1"
                 app:layout_constraintBottom_toBottomOf="@id/iv_go_to_library"
@@ -327,7 +326,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="36dp"
             android:lineSpacingExtra="6sp"
-            android:text="@string/release_note"
+            android:text="@string/home_release_note_title"
             android:textAppearance="@style/H5_SemiBold"
             android:textColor="@color/sub_g1"
             app:layout_constraintStart_toStartOf="parent"
@@ -342,7 +341,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_title_release">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
 
@@ -367,7 +366,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/release_wendy_content"
+                        android:text="@string/home_release_wendy_content"
                         android:textAppearance="@style/H7_SemiBold"
                         android:textColor="@color/sub_g1"
                         app:layout_constraintStart_toStartOf="@id/iv_release_wendy"
@@ -387,7 +386,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="김윤지"
+                        android:text="@string/home_release_author_yoonji"
                         android:textAppearance="@style/B3_Medium"
                         android:textColor="@color/sub_g2"
                         app:layout_constraintStart_toStartOf="@id/line_release"
@@ -408,7 +407,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
-                        android:text="B"
+                        android:text="@string/home_release_mark_b"
                         android:textAppearance="@style/B3_Medium"
                         android:textColor="#4BDDF0"
                         app:layout_constraintBottom_toBottomOf="@id/line_release_author"
@@ -439,7 +438,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/lck_content"
+                        android:text="@string/home_release_lck_content"
                         android:textAppearance="@style/H7_SemiBold"
                         android:textColor="@color/sub_g1"
                         app:layout_constraintStart_toStartOf="@id/iv_release_lck"
@@ -459,7 +458,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="롱블랙"
+                        android:text="@string/home_release_author_long_black"
                         android:textAppearance="@style/B3_Medium"
                         android:textColor="@color/sub_g2"
                         app:layout_constraintStart_toStartOf="@id/line_release_lck"
@@ -480,7 +479,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
-                        android:text="B"
+                        android:text="@string/home_release_mark_b"
                         android:textAppearance="@style/B3_Medium"
                         android:textColor="#4BDDF0"
                         app:layout_constraintBottom_toBottomOf="@id/line_release_author_lck"
@@ -512,7 +511,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/woman_content"
+                        android:text="@string/home_release_soong_content"
                         android:textAppearance="@style/H7_SemiBold"
                         android:textColor="@color/sub_g1"
                         app:layout_constraintStart_toStartOf="@id/iv_release_woman"
@@ -532,7 +531,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="롱블랙"
+                        android:text="@string/home_release_author_long_black"
                         android:textAppearance="@style/B3_Medium"
                         android:textColor="@color/sub_g2"
                         app:layout_constraintStart_toStartOf="@id/line_release_woman"
@@ -553,7 +552,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
-                        android:text="B"
+                        android:text="@string/home_release_mark_b"
                         android:textAppearance="@style/B3_Medium"
                         android:textColor="#4BDDF0"
                         app:layout_constraintBottom_toBottomOf="@id/line_release_author_woman"
@@ -582,18 +581,18 @@
             android:id="@+id/layout_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/iv_bottom_navi"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line_list"
-            app:layout_constraintBottom_toTopOf="@id/iv_bottom_navi">
+            app:layout_constraintTop_toBottomOf="@id/line_list">
 
             <TextView
                 android:id="@+id/tv_title_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:lineSpacingExtra="6sp"
-                android:text="@string/event"
-                android:layout_marginTop="35dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/home_event_title"
                 android:textAppearance="@style/H5_SemiBold"
                 android:textColor="@color/sub_g1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -614,12 +613,11 @@
                 android:id="@+id/btn_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow2_right_big"
                 android:layout_marginEnd="20dp"
                 android:background="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="@id/btn_before"
+                android:src="@drawable/ic_arrow2_right_big"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="@id/btn_before" />
 
             <ImageView
                 android:id="@+id/iv_event_list"
@@ -636,22 +634,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
             <ImageView
                 android:id="@+id/iv_event_curation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="18dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="37dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_home_event_bottom"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_event_list"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_event_list" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -661,8 +657,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/img_navigationbar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
