@@ -3,6 +3,7 @@ package com.example.longdroid.presentation.article
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.ConcatAdapter
 import coil.load
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityArticleBinding
@@ -18,12 +19,28 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         observeLike()
         observeBookMark()
         setupClickListeners()
+
+        articleViewModel.getArticleData(1)
+
+        val articleTitleAdapter = ArticleTitleAdapter()
+        val articleMainAdapter = ArticleParagraphAdapter()
+        val articleAdapter = ConcatAdapter(articleTitleAdapter, articleMainAdapter)
+        binding.rvArticleTitle.adapter = articleAdapter
+
+        articleViewModel.articleTitleData.observe(this) { articleTitleData ->
+            articleTitleAdapter.submitList(listOf(articleTitleData))
+        }
+
+        articleViewModel.articleData.observe(this) { articleMainData ->
+            articleMainAdapter.submitList(articleMainData)
+        }
     }
 
     private fun setupClickListeners() {
         with(binding) {
             ivArticleLike.setOnSingleClickListener {
                 articleViewModel.setLikeState()
+                articleViewModel.putLikeState(1, false)
             }
             ivArticleReadMark.setOnSingleClickListener {
                 setTransparentBackground()
