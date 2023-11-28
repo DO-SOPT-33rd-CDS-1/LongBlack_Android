@@ -20,12 +20,8 @@ class ArticlelViewModel() : ViewModel() {
     private val _isLike = MutableLiveData(false)
     val isLike: LiveData<Boolean> get() = _isLike
 
-    private val _articleTitleData = MutableLiveData<ResponseArticleDto>()
-    val articleTitleData: LiveData<ResponseArticleDto> get() = _articleTitleData
-
-    private val _articleMainData = MutableLiveData<List<ResponseArticleDto.Paragraph>>()
-    val articleData: LiveData<List<ResponseArticleDto.Paragraph>> get() = _articleMainData
-
+    private val _articleData = MutableLiveData<ResponseArticleDto>()
+    val articleData: LiveData<ResponseArticleDto> get() = _articleData
     fun setLikeState() {
         _isLike.value = _isLike.value?.not()
     }
@@ -56,8 +52,7 @@ class ArticlelViewModel() : ViewModel() {
             runCatching {
                 articleService.getArticleInfo(postId)
             }.onSuccess {
-                _articleTitleData.value = it
-                _articleMainData.value = it.paragraphs
+                _articleData.value = it
             }.onFailure {
                 // TODO: 에러 처리
             }
