@@ -2,6 +2,7 @@ package com.example.longdroid.data.di
 
 import android.util.Log
 import com.example.longdroid.BuildConfig
+import com.example.longdroid.data.service.LikedService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
@@ -53,4 +54,6 @@ object HomeApiFactory {
 object HomeServicePool {
     // TODO 이런식으로 ServicePool 각자 만들어서 쓰면 됩니다!
     // val homeService = HomeApiFactory.create<HomeService>()  <--- 예시임!
+
+    val likedService = HomeApiFactory.create<LikedService>()
 }
