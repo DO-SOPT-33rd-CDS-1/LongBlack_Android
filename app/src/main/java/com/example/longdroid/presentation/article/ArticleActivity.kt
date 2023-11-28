@@ -27,12 +27,9 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         val articleAdapter = ConcatAdapter(articleTitleAdapter, articleMainAdapter)
         binding.rvArticleTitle.adapter = articleAdapter
 
-        articleViewModel.articleTitleData.observe(this) { articleTitleData ->
-            articleTitleAdapter.submitList(listOf(articleTitleData))
-        }
-
-        articleViewModel.articleData.observe(this) { articleMainData ->
-            articleMainAdapter.submitList(articleMainData)
+        articleViewModel.articleData.observe(this) { articleData ->
+            articleTitleAdapter.submitList(listOf(articleData))
+            articleMainAdapter.submitList(articleData.paragraphs)
         }
     }
 
