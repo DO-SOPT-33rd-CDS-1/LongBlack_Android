@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/tv_article_subtitle"
-        style="@style/H6_Bold"
+        style="@style/H5_SemiBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="6dp"
