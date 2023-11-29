@@ -2,16 +2,19 @@ package com.example.longdroid.presentation.article
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import com.example.longdroid.data.model.response.ResponseArticleDto
 import com.example.longdroid.databinding.ItemArticleBodyBinding
 import com.example.longdroid.databinding.ItemArticleSubtitleBinding
 import com.example.longdroid.util.extension.ItemDiffCallback
 
-class ArticleParagraphAdapter() :
+class ArticleParagraphAdapter(
+    private val addReadMark: (TextView, String, Int) -> Unit,
+) :
     ListAdapter<ResponseArticleDto.Paragraph, ArticleParagraphViewHolder>(
         ItemDiffCallback<ResponseArticleDto.Paragraph>(
-            onItemsTheSame = { old, new -> old.paragraphType == new.paragraphType },
+            onItemsTheSame = { old, new -> old.content == new.content },
             onContentsTheSame = { old, new -> old == new },
         ),
     ) {
@@ -32,7 +35,7 @@ class ArticleParagraphAdapter() :
                     parent,
                     false,
                 )
-                ArticleParagraphViewHolder.BodyArticleViewHolder(binding)
+                ArticleParagraphViewHolder.BodyArticleViewHolder(binding, addReadMark)
             }
 
             else -> throw IllegalArgumentException(UNKNOWN_TYPE)
@@ -41,8 +44,15 @@ class ArticleParagraphAdapter() :
 
     override fun onBindViewHolder(holder: ArticleParagraphViewHolder, position: Int) {
         when (holder) {
-            is ArticleParagraphViewHolder.SubTitleArticleViewHolder -> holder.onBind(getItem(position))
-            is ArticleParagraphViewHolder.BodyArticleViewHolder -> holder.onBind(getItem(position))
+            is ArticleParagraphViewHolder.SubTitleArticleViewHolder -> holder.onBind(
+                getItem(
+                    position,
+                ),
+            )
+
+            is ArticleParagraphViewHolder.BodyArticleViewHolder -> holder.onBind(
+                getItem(position),
+            )
         }
     }
 
