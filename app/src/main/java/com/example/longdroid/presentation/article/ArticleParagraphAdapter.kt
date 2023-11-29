@@ -11,6 +11,7 @@ import com.example.longdroid.util.extension.ItemDiffCallback
 
 class ArticleParagraphAdapter(
     private val addReadMark: (TextView, String, Int) -> Unit,
+    private val reLoadBookMark: (TextView, String) -> Unit,
 ) :
     ListAdapter<ResponseArticleDto.Paragraph, ArticleParagraphViewHolder>(
         ItemDiffCallback<ResponseArticleDto.Paragraph>(
@@ -35,7 +36,11 @@ class ArticleParagraphAdapter(
                     parent,
                     false,
                 )
-                ArticleParagraphViewHolder.BodyArticleViewHolder(binding, addReadMark)
+                ArticleParagraphViewHolder.BodyArticleViewHolder(
+                    binding,
+                    addReadMark,
+                    reLoadBookMark,
+                )
             }
 
             else -> throw IllegalArgumentException(UNKNOWN_TYPE)
