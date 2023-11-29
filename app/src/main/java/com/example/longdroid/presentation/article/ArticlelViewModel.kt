@@ -6,32 +6,32 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.longdroid.data.di.ServicePool.articleService
 import com.example.longdroid.data.model.request.RequestArticleLikeDto
+import com.example.longdroid.data.model.request.RequestArticleStampDto
 import com.example.longdroid.data.model.response.ResponseArticleDto
 import kotlinx.coroutines.launch
 
 class ArticlelViewModel() : ViewModel() {
 
-    private val _isBookMarked = MutableLiveData(false)
-    val isBookMarked: LiveData<Boolean> get() = _isBookMarked
-
     private val _isStamp = MutableLiveData(false)
     val isStamp: LiveData<Boolean> get() = _isStamp
 
-    private val _isLike = MutableLiveData(false)
-    val isLike: LiveData<Boolean> get() = _isLike
-
     private val _articleData = MutableLiveData<ResponseArticleDto>()
     val articleData: LiveData<ResponseArticleDto> get() = _articleData
-    fun setLikeState() {
-        _isLike.value = _isLike.value?.not()
-    }
 
     fun setStampState() {
         _isStamp.value = _isStamp.value?.not()
     }
 
-    fun setBookMarkState() {
-        _isBookMarked.value = _isBookMarked.value?.not()
+    fun postStampState(postId: Long) {
+        viewModelScope.launch {
+            runCatching {
+                articleService.postStampInfo(
+                    RequestArticleStampDto(
+                        postId,
+                    ),
+                )
+            }
+        }
     }
 
     fun putLikeState(postId: Int, isListView: Boolean) {

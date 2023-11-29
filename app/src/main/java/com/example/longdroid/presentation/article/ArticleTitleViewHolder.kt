@@ -7,7 +7,10 @@ import com.example.longdroid.data.model.response.ResponseArticleDto
 import com.example.longdroid.databinding.ItemArticleTitleBinding
 import com.example.longdroid.util.extension.setOnSingleClickListener
 
-class ArticleTitleViewHolder(private val binding: ItemArticleTitleBinding) :
+class ArticleTitleViewHolder(
+    private val binding: ItemArticleTitleBinding,
+    private val clickStamp: (Int) -> Unit,
+) :
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(articleTitle: ResponseArticleDto) {
         with(binding) {
@@ -19,6 +22,9 @@ class ArticleTitleViewHolder(private val binding: ItemArticleTitleBinding) :
                 ivArticleCoffee.load(R.drawable.ic_coffee_sticker_on_big)
             } else {
                 ivArticleCoffee.load(R.drawable.ic_coffee_sticker_off_big)
+            }
+            ivArticleCoffee.setOnSingleClickListener {
+                clickStamp(absoluteAdapterPosition)
             }
         }
     }

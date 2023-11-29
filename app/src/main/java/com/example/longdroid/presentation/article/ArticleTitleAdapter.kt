@@ -7,7 +7,9 @@ import com.example.longdroid.data.model.response.ResponseArticleDto
 import com.example.longdroid.databinding.ItemArticleTitleBinding
 import com.example.longdroid.util.extension.ItemDiffCallback
 
-class ArticleTitleAdapter() :
+class ArticleTitleAdapter(
+    private val clickStamp: (Int) -> Unit,
+) :
     ListAdapter<ResponseArticleDto, ArticleTitleViewHolder>(
         ItemDiffCallback<ResponseArticleDto>(
             onItemsTheSame = { old, new -> old.title == new.title },
@@ -17,7 +19,7 @@ class ArticleTitleAdapter() :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleTitleViewHolder {
         val binding =
             ItemArticleTitleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ArticleTitleViewHolder(binding)
+        return ArticleTitleViewHolder(binding, clickStamp)
     }
 
     override fun onBindViewHolder(holder: ArticleTitleViewHolder, position: Int) {
