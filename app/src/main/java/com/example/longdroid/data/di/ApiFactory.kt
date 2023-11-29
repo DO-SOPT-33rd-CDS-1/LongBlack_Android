@@ -23,6 +23,10 @@ object HomeApiFactory {
             .build()
     }
 
+    val libraryService: LibraryApiService by lazy {
+        create<LibraryApiService>()
+    }
+
     private fun getLogOkHttpClient(): Interceptor {
         val interceptor = HttpLoggingInterceptor { message ->
             when {
@@ -51,6 +55,4 @@ object HomeApiFactory {
     inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
 }
 
-object HomeServicePool {
-    val libraryService = retrofit.create(LibraryApiService::class.java)
-}
+object HomeServicePool

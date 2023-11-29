@@ -17,7 +17,7 @@ class LibraryActivity : BindingActivity<ActivityLibraryBinding>(R.layout.activit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        HomeApiFactory.libraryService.getStampCount.enqueue(object :
+        HomeApiFactory.libraryService.getStampCount().enqueue(object :
             Callback<LibraryResponse> {
             override fun onResponse(
                 call: Call<LibraryResponse>,
