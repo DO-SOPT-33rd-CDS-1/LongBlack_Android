@@ -1,9 +1,9 @@
 package com.example.longdroid.presentation.article
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ImageSpan
-import android.util.Log
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -31,8 +31,12 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
             addReadMark = { textView, clickedText, position ->
                 if (isTransparentBackgroundSet()) {
                     appendImageToTextView(textView, clickedText)
+                    LongBlackStorage.bookMarkIdx = position
                     postBookMark(position)
                 }
+            },
+            reLoadBookMark = { textView, clickedText ->
+                appendImageToTextView(textView, clickedText)
             },
         )
     }
@@ -51,7 +55,6 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         articleViewModel.postBookMarkState(1, bookMarkIdx)
         LongBlackStorage.bookMarkIdx = bookMarkIdx
         updateBookMarkUI(LongBlackStorage.bookMarkIdx)
-        Log.d("aaa", "${LongBlackStorage.bookMarkIdx}")
         setDefaultBackground()
     }
 
@@ -68,10 +71,10 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
             articleParagraphAdapter.submitList(articleData.paragraphs)
             updateLikeUI(articleData.like)
             updateBookMarkUI(articleData.bookmarkIdx)
-            LongBlackStorage.bookMarkIdx = articleData.bookmarkIdx
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setupClickListeners() {
         with(binding) {
             ivArticleLike.setOnSingleClickListener {
@@ -81,6 +84,7 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
             ivArticleReadMark.setOnSingleClickListener {
                 if (LongBlackStorage.bookMarkIdx != -1) {
                     articleViewModel.deleteBookMarkState(1)
+                    articleParagraphAdapter.notifyDataSetChanged()
                     LongBlackStorage.bookMarkIdx = -1
                     updateBookMarkUI(LongBlackStorage.bookMarkIdx)
                 } else {
@@ -122,24 +126,20 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
     }
 
     private fun appendImageToTextView(textView: TextView, clickedText: String) {
-        Log.d("aaa", "${textView.text}")
         val imageDrawable = ContextCompat.getDrawable(this, R.drawable.ic_read_mark)
         imageDrawable?.setBounds(0, 0, imageDrawable.intrinsicWidth, imageDrawable.intrinsicHeight)
 
         val imageStartIndex = clickedText.indexOf("\n\n")
 
         if (imageDrawable != null && imageStartIndex != -1) {
-            // 특정 위치에 이미지를 추가
             val imageSpan = ImageSpan(imageDrawable, ImageSpan.ALIGN_CENTER)
-
             val spannableString = SpannableString(clickedText).apply {
                 setSpan(
                     imageSpan,
-                    imageStartIndex - 1, // 첫 번째 \n 문자 앞에 이미지를 추가하므로, 시작 인덱스를 -1로 설정
+                    imageStartIndex - 1,
                     imageStartIndex,
                     SpannableString.SPAN_INCLUSIVE_EXCLUSIVE,
                 )
-                Log.d("ttt", "$imageStartIndex")
             }
             textView.text = spannableString
         }

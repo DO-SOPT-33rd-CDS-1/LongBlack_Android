@@ -1,12 +1,8 @@
 package com.example.longdroid.presentation.article
 
-import android.text.SpannableString
-import android.text.style.ImageSpan
 import android.view.View
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.longdroid.R
 import com.example.longdroid.data.datasource.LongBlackStorage
 import com.example.longdroid.data.model.response.ResponseArticleDto
 import com.example.longdroid.databinding.ItemArticleBodyBinding
@@ -27,6 +23,7 @@ sealed class ArticleParagraphViewHolder(view: View) : RecyclerView.ViewHolder(vi
     class BodyArticleViewHolder(
         private var binding: ItemArticleBodyBinding,
         private val addReadMark: (TextView, String, Int) -> Unit,
+        private val reLoadBookMark: (TextView, String) -> Unit,
     ) :
         ArticleParagraphViewHolder(binding.root) {
 
@@ -37,17 +34,14 @@ sealed class ArticleParagraphViewHolder(view: View) : RecyclerView.ViewHolder(vi
                 tvArticleMain.text = articleBody.content
 
                 tvArticleMain.setOnSingleClickListener {
-                    val clickedText = binding.tvArticleMain.text.toString()
-                    addReadMark(binding.tvArticleMain, clickedText, absoluteAdapterPosition)
+                    addReadMark(tvArticleMain, articleBody.content, absoluteAdapterPosition)
                 }
                 if (LongBlackStorage.bookMarkIdx != -1) {
                     if (absoluteAdapterPosition == LongBlackStorage.bookMarkIdx) {
-                        val clickedText = tvArticleMain.text.toString()
-                        addReadMark(binding.tvArticleMain, clickedText, absoluteAdapterPosition)
+                        reLoadBookMark(tvArticleMain, articleBody.content)
                     }
                 }
             }
         }
-
     }
 }
