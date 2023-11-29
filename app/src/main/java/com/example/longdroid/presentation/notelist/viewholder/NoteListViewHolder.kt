@@ -1,4 +1,4 @@
-package com.example.longdroid.presentation.note_list.viewholder
+package com.example.longdroid.presentation.notelist.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
