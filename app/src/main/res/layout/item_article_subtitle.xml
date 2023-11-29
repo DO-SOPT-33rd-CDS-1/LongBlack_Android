@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/tv_article_subtitle"
         style="@style/H5_SemiBold"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="6dp"
         android:paddingBottom="25dp"
