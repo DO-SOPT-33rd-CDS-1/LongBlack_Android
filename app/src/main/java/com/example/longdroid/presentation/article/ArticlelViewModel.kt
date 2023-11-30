@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.longdroid.di.ServicePool.articleService
 import com.example.longdroid.data.model.request.RequestArticleBookMarkDto
 import com.example.longdroid.data.model.request.RequestArticleLikeDto
 import com.example.longdroid.data.model.request.RequestArticleStampDto
 import com.example.longdroid.data.model.response.ResponseArticleDto
+import com.example.longdroid.di.ServicePool.articleService
 import kotlinx.coroutines.launch
 
 class ArticlelViewModel() : ViewModel() {

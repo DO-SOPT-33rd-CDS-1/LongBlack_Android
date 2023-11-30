@@ -6,10 +6,10 @@ import android.util.Log
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.R
-import com.example.longdroid.di.ServicePool
 import com.example.longdroid.data.model.request.RequestLike
 import com.example.longdroid.data.model.response.ResponseNote
 import com.example.longdroid.databinding.ItemNoteBinding
+import com.example.longdroid.di.ServicePool
 import com.example.longdroid.util.extension.setOnSingleClickListener
 import com.example.longdroid.util.extension.showToast
 import kotlinx.coroutines.CoroutineScope

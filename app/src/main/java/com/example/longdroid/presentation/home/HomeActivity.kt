@@ -1,20 +1,16 @@
-package com.example.longdroid.presentation
+package com.example.longdroid.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import coil.load
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityHomeBinding
 import com.example.longdroid.presentation.library.LibraryActivity
 import com.example.longdroid.presentation.notelist.NoteListActivity
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -41,33 +37,37 @@ class HomeActivity : AppCompatActivity() {
         val view: View = binding.root
         setContentView(view)
 
-        val imageView: ImageView = binding.ivEventList
-        val nextButton: ImageButton = binding.btnNext
-        val beforeButton: ImageButton = binding.btnBefore
+        initViews()
+        initButtons()
+        updateRemainingTime()
+    }
 
-        nextButton.setOnClickListener {
-            currentImageIndex = (currentImageIndex + 1) % imageResources.size
-            imageView.setImageResource(imageResources[currentImageIndex])
+    private fun initViews() {
+        binding.ivEventList.load(imageResources[currentImageIndex])
+
+        binding.btnGoToLibrary.setOnClickListener {
+            startActivity(Intent(this, LibraryActivity::class.java))
         }
 
-        beforeButton.setOnClickListener {
+        binding.btnGoToNote.setOnClickListener {
+            startActivity(Intent(this, NoteListActivity::class.java))
+        }
+    }
+
+    private fun initButtons() {
+        binding.btnNext.setOnClickListener {
+            currentImageIndex = (currentImageIndex + 1) % imageResources.size
+            binding.ivEventList.load(imageResources[currentImageIndex])
+        }
+
+        binding.btnBefore.setOnClickListener {
             currentImageIndex = if (currentImageIndex > 0) {
                 currentImageIndex - 1
             } else {
                 imageResources.size - 1
             }
-            imageView.setImageResource(imageResources[currentImageIndex])
+            binding.ivEventList.load(imageResources[currentImageIndex])
         }
-        binding.btnGoToLibrary.setOnClickListener {
-            val intent = Intent(this, LibraryActivity::class.java)
-            startActivity(intent)
-        }
-        binding.btnGoToNote.setOnClickListener {
-            val intent = Intent(this, NoteListActivity::class.java)
-            startActivity(intent)
-        }
-
-        updateRemainingTime()
     }
 
     override fun onResume() {
@@ -83,18 +83,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun updateRemainingTime() {
-        val currentTime = Calendar.getInstance().time
-        val dateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
-        val currentTimeString = dateFormat.format(currentTime)
-
-        val currentTimeParts = currentTimeString.split(":")
-        val currentHour = currentTimeParts[0].toInt()
-        val currentMinute = currentTimeParts[1].toInt()
-        val currentSecond = currentTimeParts[2].toInt()
-
-        val remainingHour = 24 - currentHour - 1
-        val remainingMinute = 59 - currentMinute
-        val remainingSecond = 59 - currentSecond
+        TimeManager.updateRemainingTime()
+        val (remainingHour, remainingMinute, remainingSecond) = TimeManager.remainingTime
 
         binding.tvHour.text = String.format("%02d", remainingHour)
         binding.tvMinute.text = String.format("%02d", remainingMinute)

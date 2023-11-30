@@ -50,4 +50,8 @@
     <string name="home_release_mark_b">B</string>
     <string name="home_release_author_long_black">롱블랙</string>
     <string name="home_release_author_yoonji">김윤지</string>
+    <string name="colons">:</string>
+    <string name="todaynote">오늘의 노트</string>
+    <string name="mypage">마이페이지</string>
+    <string name="alarm">알람</string>
 </resources>
