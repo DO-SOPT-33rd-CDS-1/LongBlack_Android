@@ -1,4 +1,4 @@
-package com.example.longdroid.data.di
+package com.example.longdroid.data.model.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
