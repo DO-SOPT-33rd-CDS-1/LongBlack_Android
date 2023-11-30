@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import coil.load
 import com.example.longdroid.R
 import com.example.longdroid.data.datasource.LongBlackStorage
+import com.example.longdroid.data.model.response.ResponseArticleDto
 import com.example.longdroid.databinding.ActivityArticleBinding
 import com.example.longdroid.util.binding.BindingActivity
 import com.example.longdroid.util.extension.setOnSingleClickListener
@@ -18,37 +19,35 @@ import com.example.longdroid.util.extension.setOnSingleClickListener
 class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activity_article) {
     private val articleViewModel: ArticlelViewModel by viewModels()
     private val articleTitleAdapter by lazy {
-        ArticleTitleAdapter(
-            clickStamp = {
-                postStamp()
-            },
-        )
+        ArticleTitleAdapter(clickStamp = { postStamp() })
     }
 
     private val articleParagraphAdapter by lazy {
         ArticleParagraphAdapter(
-
-            addReadMark = { textView, clickedText, position ->
-                if (isTransparentBackgroundSet()) {
-                    appendImageToTextView(textView, clickedText)
-                    LongBlackStorage.bookMarkIdx = position
-                    postBookMark(position)
-                }
-            },
-            reLoadBookMark = { textView, clickedText ->
-                appendImageToTextView(textView, clickedText)
-            },
+            addReadMark = this::addReadMark,
+            reLoadBookMark = this::appendImageToTextView,
         )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setAdapter()
+        fetchArticle()
+        putLikeState()
+        clickBookMark()
+    }
+
+    private fun setAdapter() {
         val articleAdapter = ConcatAdapter(articleTitleAdapter, articleParagraphAdapter)
         binding.rvArticleTitle.adapter = articleAdapter
+    }
 
-        fetchArticle()
-        setupClickListeners()
+    private fun addReadMark(textView: TextView, clickedText: String, position: Int) {
+        if (isTransparentBackgroundSet()) {
+            appendImageToTextView(textView, clickedText)
+            postBookMark(position)
+        }
     }
 
     private fun postBookMark(bookMarkIdx: Int) {
@@ -63,35 +62,45 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         fetchArticle()
     }
 
+    private fun putLikeState() {
+        binding.ivArticleLike.setOnSingleClickListener {
+            articleViewModel.putLikeState(1, false)
+            fetchArticle()
+        }
+    }
+
     private fun fetchArticle() {
         articleViewModel.getArticleData(1)
+        articleViewModel.articleData.observe(this, this::onArticleDataChanged)
+    }
 
-        articleViewModel.articleData.observe(this) { articleData ->
-            articleTitleAdapter.submitList(listOf(articleData))
-            articleParagraphAdapter.submitList(articleData.paragraphs)
-            updateLikeUI(articleData.like)
-            updateBookMarkUI(articleData.bookmarkIdx)
+    private fun onArticleDataChanged(articleData: ResponseArticleDto) {
+        articleTitleAdapter.submitList(listOf(articleData))
+        articleParagraphAdapter.submitList(articleData.paragraphs)
+        updateLikeUI(articleData.like)
+        updateBookMarkUI(articleData.bookmarkIdx)
+    }
+
+    private fun clickBookMark() {
+        binding.ivArticleReadMark.setOnSingleClickListener {
+            handleBookMarkClick()
+        }
+    }
+
+    private fun handleBookMarkClick() {
+        if (LongBlackStorage.bookMarkIdx != -1) {
+            handleDeleteBookMarkClick()
+        } else {
+            setTransparentBackground()
         }
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun setupClickListeners() {
-        with(binding) {
-            ivArticleLike.setOnSingleClickListener {
-                articleViewModel.putLikeState(1, false)
-                fetchArticle()
-            }
-            ivArticleReadMark.setOnSingleClickListener {
-                if (LongBlackStorage.bookMarkIdx != -1) {
-                    articleViewModel.deleteBookMarkState(1)
-                    articleParagraphAdapter.notifyDataSetChanged()
-                    LongBlackStorage.bookMarkIdx = -1
-                    updateBookMarkUI(LongBlackStorage.bookMarkIdx)
-                } else {
-                    setTransparentBackground()
-                }
-            }
-        }
+    private fun handleDeleteBookMarkClick() {
+        articleViewModel.deleteBookMarkState(1)
+        articleParagraphAdapter.notifyDataSetChanged()
+        LongBlackStorage.bookMarkIdx = -1
+        updateBookMarkUI(LongBlackStorage.bookMarkIdx)
     }
 
     private fun setDefaultBackground() {
@@ -108,21 +117,11 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
     }
 
     private fun updateLikeUI(isLike: Boolean) {
-        val likeImage = if (isLike) {
-            R.drawable.ic_book_mark_on_small
-        } else {
-            R.drawable.ic_book_mark_off_small
-        }
-        binding.ivArticleLike.load(likeImage)
+        binding.ivArticleLike.load(if (isLike) R.drawable.ic_book_mark_on_small else R.drawable.ic_book_mark_off_small)
     }
 
     private fun updateBookMarkUI(isBookMark: Int?) {
-        val bookMarkImage = if (isBookMark != -1) {
-            R.drawable.ic_btn_delete_read_mark
-        } else {
-            R.drawable.ic_btn_add_read_mark
-        }
-        binding.ivArticleReadMark.load(bookMarkImage)
+        binding.ivArticleReadMark.load(if (isBookMark != -1) R.drawable.ic_btn_delete_read_mark else R.drawable.ic_btn_add_read_mark)
     }
 
     private fun appendImageToTextView(textView: TextView, clickedText: String) {
