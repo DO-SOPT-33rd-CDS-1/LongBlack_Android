@@ -1,9 +1,11 @@
 package com.example.longdroid.presentation.notelist.viewholder
 
+import android.graphics.Color
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.data.di.HomeServicePool
 import com.example.longdroid.data.model.request.RequestLike
+import com.example.longdroid.data.model.response.ResponseNote
 import com.example.longdroid.databinding.ItemNoteBinding
 import com.example.longdroid.util.extension.setOnSingleClickListener
 import com.example.longdroid.util.extension.showToast
@@ -12,14 +14,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
+class NoteListViewHolder(private val binding: ItemNoteBinding) :
+    RecyclerView.ViewHolder(binding.root) {
     private val btnLiked = binding.btnLiked
 
     init {
         clickBtnLiked()
     }
 
-    fun clickBtnLiked() {
+    private fun clickBtnLiked() {
         btnLiked.setOnSingleClickListener {
             CoroutineScope(Dispatchers.Main).launch {
                 runCatching {
@@ -35,7 +38,6 @@ class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(bin
                 }.onSuccess { response ->
                     if (response.isSuccessful) {
                         val responseBody = response.body().toString()
-                        Log.d("tongsin", responseBody)
                         Log.d("tongsin", response.code().toString())
                     } else {
                         Log.d("tongsin", "error")
@@ -50,6 +52,15 @@ class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(bin
                     )
                 }
             }
+        }
+    }
+
+    fun bind(note: ResponseNote) {
+        with(binding) {
+            tvNoteTitle.text = note.title
+            tvNoteWriter.text = note.writer
+            tvNoteAlphabet.text = note.postType
+            containerNoteText.setBackgroundColor(Color.parseColor(note.color))
         }
     }
 
