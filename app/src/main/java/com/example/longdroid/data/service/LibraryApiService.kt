@@ -1,5 +1,6 @@
-package com.example.longdroid.data.di
+package com.example.longdroid.data.service
 
+import com.example.longdroid.data.model.response.LibraryResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

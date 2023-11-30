@@ -2,8 +2,8 @@ package com.example.longdroid.data.di
 
 import android.util.Log
 import com.example.longdroid.BuildConfig
+import com.example.longdroid.data.service.LibraryApiService
 import com.example.longdroid.data.service.LikedService
-import com.example.longdroid.data.di.HomeApiFactory.retrofit
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
@@ -24,9 +24,6 @@ object HomeApiFactory {
             .build()
     }
 
-    val libraryService: LibraryApiService by lazy {
-        create<LibraryApiService>()
-    }
     private fun getLogOkHttpClient(): Interceptor {
         val interceptor = HttpLoggingInterceptor { message ->
             when {
@@ -60,4 +57,6 @@ object HomeServicePool {
     // val homeService = HomeApiFactory.create<HomeService>()  <--- 예시임!
 
     val likedService = HomeApiFactory.create<LikedService>()
+
+    val libraryService = HomeApiFactory.create<LibraryApiService>()
 }
