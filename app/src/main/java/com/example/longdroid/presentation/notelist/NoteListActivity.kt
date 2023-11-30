@@ -29,7 +29,9 @@ class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activ
     }
 
     private fun initRecyclerView() {
-        val headerAdapter = NoteListHeaderAdapter()
+        val headerAdapter = NoteListHeaderAdapter {
+            finish()
+        }
         val footerAdapter = NoteListFooterAdapter()
 
         val concatAdapter = ConcatAdapter(headerAdapter, itemAdapter, footerAdapter)
