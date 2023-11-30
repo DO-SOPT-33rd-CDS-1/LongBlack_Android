@@ -22,7 +22,7 @@ class NoteListItemAdapter : ListAdapter<ResponseNote, NoteListViewHolder>(NoteDi
             0 -> R.drawable.img_note_open_gallery
             1 -> R.drawable.img_note_books
             2 -> R.drawable.img_note_bottles
-            3 -> R.drawable.img_note_structure
+            3 -> R.drawable.img_note_arc
             4 -> R.drawable.img_note_kolon
             5 -> R.drawable.img_note_girl
             6 -> R.drawable.img_note_barista
