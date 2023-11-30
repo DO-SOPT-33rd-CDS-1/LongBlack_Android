@@ -166,6 +166,11 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
         }
     }
 
+    override fun onDestroy() {
+        binding.rvArticleTitle.adapter = null
+        super.onDestroy()
+    }
+
     companion object {
         private const val FIRST_ARTICLE = 1
     }
