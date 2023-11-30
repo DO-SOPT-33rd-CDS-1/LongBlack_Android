@@ -10,6 +10,8 @@ import com.example.longdroid.util.extension.showToast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
     private val btnLiked = binding.btnLiked
 
@@ -19,14 +21,18 @@ class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(bin
 
     fun clickBtnLiked() {
         btnLiked.setOnSingleClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                try {
-                    val response = HomeServicePool.likedService.putLiked(
-                        RequestLike(
-                            LIST_VIEW_CHECK,
-                            2,
-                        ),
-                    ) // postId 현재는 하드코딩
+            CoroutineScope(Dispatchers.Main).launch {
+                runCatching {
+                    withContext(Dispatchers.IO) {
+                        val response = HomeServicePool.likedService.putLiked(
+                            RequestLike(
+                                LIST_VIEW_CHECK,
+                                2,
+                            ),
+                        )
+                        response
+                    }
+                }.onSuccess { response ->
                     if (response.isSuccessful) {
                         val responseBody = response.body().toString()
                         Log.d("tongsin", responseBody)
@@ -37,7 +43,7 @@ class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(bin
                             TOAST_MESSAGE,
                         )
                     }
-                } catch (e: Exception) {
+                }.onFailure { e ->
                     Log.d("tongsin", e.toString())
                     btnLiked.context.showToast(
                         TOAST_MESSAGE,

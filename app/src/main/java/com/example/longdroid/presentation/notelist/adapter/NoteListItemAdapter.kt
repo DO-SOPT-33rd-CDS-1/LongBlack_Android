@@ -3,7 +3,7 @@ package com.example.longdroid.presentation.notelist.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.longdroid.R
+import com.example.longdroid.databinding.ItemNoteBinding
 import com.example.longdroid.presentation.notelist.viewholder.NoteListViewHolder
 
 class NoteListItemAdapter() :
