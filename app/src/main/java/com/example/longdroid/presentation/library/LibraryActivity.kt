@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import com.bumptech.glide.Glide
 import com.example.longdroid.R
-import com.example.longdroid.data.di.HomeApiFactory
-import com.example.longdroid.data.di.LibraryResponse
+import com.example.longdroid.data.model.response.LibraryResponse
 import com.example.longdroid.databinding.ActivityLibraryBinding
+import com.example.longdroid.di.ServicePool
 import com.example.longdroid.util.binding.BindingActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,23 +17,25 @@ class LibraryActivity : BindingActivity<ActivityLibraryBinding>(R.layout.activit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        HomeApiFactory.libraryService.getStampCount().enqueue(object :
-            Callback<LibraryResponse> {
-            override fun onResponse(
-                call: Call<LibraryResponse>,
-                response: Response<LibraryResponse>,
-            ) {
-                if (response.isSuccessful) {
-                    val stampCount = response.body()?.stampCount ?: 0
+        ServicePool.libraryService.getStampCount().enqueue(
+            object :
+                Callback<LibraryResponse> {
+                override fun onResponse(
+                    call: Call<LibraryResponse>,
+                    response: Response<LibraryResponse>,
+                ) {
+                    if (response.isSuccessful) {
+                        val stampCount = response.body()?.stampCount ?: 0
 
-                    updateStampImages(stampCount)
+                        updateStampImages(stampCount)
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<LibraryResponse>, t: Throwable) {
-                Log.e("API_REQUEST_FAILURE", "API 요청 실패: ${t.message}")
-            }
-        })
+                override fun onFailure(call: Call<LibraryResponse>, t: Throwable) {
+                    Log.e("API_REQUEST_FAILURE", "API 요청 실패: ${t.message}")
+                }
+            },
+        )
     }
 
     private fun updateStampImages(stampCount: Int) {

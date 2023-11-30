@@ -3,15 +3,16 @@ package com.example.longdroid.presentation.notelist.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.longdroid.R
+import com.example.longdroid.databinding.ItemNoteListHeaderBinding
 import com.example.longdroid.presentation.notelist.viewholder.HeaderViewHolder
 
-class NoteListHeaderAdapter : RecyclerView.Adapter<HeaderViewHolder>() {
+class NoteListHeaderAdapter(private val onBackButtonClicked: () -> Unit) :
+    RecyclerView.Adapter<HeaderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeaderViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_note_list_header, parent, false)
-        return HeaderViewHolder(view)
+        val binding =
+            ItemNoteListHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return HeaderViewHolder(binding, onBackButtonClicked)
     }
 
     override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
