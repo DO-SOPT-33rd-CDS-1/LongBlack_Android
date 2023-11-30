@@ -582,7 +582,7 @@
             android:id="@+id/layout_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/iv_bottom_navi"
+            app:layout_constraintBottom_toTopOf="@id/layout_bottom_navigation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line_list">
 
@@ -604,7 +604,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="12dp"
+
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_arrow2_left_big"
                 app:layout_constraintEnd_toStartOf="@id/btn_next"
@@ -653,13 +653,86 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/iv_bottom_navi"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_bottom_navigation"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img_navigationbar"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/iv_bottom_todaynote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_todaynote_active"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="48dp"
+                android:layout_marginStart="40dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_bottom_todaynote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/todaynote"
+                android:textColor="@color/sub_g1"
+                android:lineSpacingExtra="4sp"
+                app:layout_constraintTop_toBottomOf="@id/iv_bottom_todaynote"
+                app:layout_constraintStart_toStartOf="@id/iv_bottom_todaynote"
+                app:layout_constraintEnd_toEndOf="@id/iv_bottom_todaynote"/>
+
+            <ImageView
+                android:id="@+id/iv_bottom_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_alarm_default"
+                app:layout_constraintStart_toEndOf="@id/iv_bottom_todaynote"
+                app:layout_constraintTop_toTopOf="@id/iv_bottom_todaynote"
+                app:layout_constraintEnd_toStartOf="@id/iv_bottom_mypage"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_bottom_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarm"
+                android:textColor="@color/sub_g4"
+                android:lineSpacingExtra="4sp"
+                app:layout_constraintTop_toBottomOf="@id/iv_bottom_alarm"
+                app:layout_constraintStart_toStartOf="@id/iv_bottom_alarm"
+                app:layout_constraintEnd_toEndOf="@id/iv_bottom_alarm"/>
+
+            <ImageView
+                android:id="@+id/iv_bottom_mypage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mypage_default"
+                app:layout_constraintTop_toTopOf="@id/iv_bottom_todaynote"
+                app:layout_constraintStart_toEndOf="@id/iv_bottom_todaynote"
+                android:layout_marginStart="240dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_bottom_mypage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mypage"
+                android:textColor="@color/sub_g4"
+                android:lineSpacingExtra="4sp"
+                app:layout_constraintTop_toBottomOf="@id/iv_bottom_mypage"
+                app:layout_constraintStart_toStartOf="@id/iv_bottom_mypage"
+                app:layout_constraintEnd_toEndOf="@id/iv_bottom_mypage"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
