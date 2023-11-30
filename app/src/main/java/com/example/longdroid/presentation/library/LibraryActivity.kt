@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import com.bumptech.glide.Glide
 import com.example.longdroid.R
-import com.example.longdroid.data.di.HomeApiFactory
-import com.example.longdroid.data.di.LibraryResponse
+import com.example.longdroid.data.di.HomeServicePool
+import com.example.longdroid.data.model.response.LibraryResponse
 import com.example.longdroid.databinding.ActivityLibraryBinding
 import com.example.longdroid.util.binding.BindingActivity
 import retrofit2.Call
@@ -17,7 +17,7 @@ class LibraryActivity : BindingActivity<ActivityLibraryBinding>(R.layout.activit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        HomeApiFactory.libraryService.getStampCount().enqueue(
+        HomeServicePool.libraryService.getStampCount().enqueue(
             object :
                 Callback<LibraryResponse> {
                 override fun onResponse(
