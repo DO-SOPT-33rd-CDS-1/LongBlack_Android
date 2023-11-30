@@ -47,7 +47,7 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
     }
 
     private fun fetchArticle() {
-        articleViewModel.getArticleData(1)
+        articleViewModel.getArticleData(FIRST_ARTICLE)
         articleViewModel.articleData.observe(this, this::onArticleDataChanged)
     }
 
@@ -78,20 +78,20 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
     }
 
     private fun postBookMark(bookMarkIdx: Int) {
-        articleViewModel.postBookMarkState(1, bookMarkIdx)
+        articleViewModel.postBookMarkState(FIRST_ARTICLE, bookMarkIdx)
         LongBlackStorage.bookMarkIdx = bookMarkIdx
         updateBookMarkUI(LongBlackStorage.bookMarkIdx)
         setDefaultBackground()
     }
 
     private fun postStamp() {
-        articleViewModel.postStampState(1)
+        articleViewModel.postStampState(FIRST_ARTICLE.toLong())
         fetchArticle()
     }
 
     private fun putLikeState() {
         binding.ivArticleLike.setOnSingleClickListener {
-            articleViewModel.putLikeState(1, false)
+            articleViewModel.putLikeState(FIRST_ARTICLE, false)
             fetchArticle()
         }
     }
@@ -119,7 +119,7 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
 
     @SuppressLint("NotifyDataSetChanged")
     private fun handleDeleteBookMarkClick() {
-        articleViewModel.deleteBookMarkState(1)
+        articleViewModel.deleteBookMarkState(FIRST_ARTICLE)
         articleParagraphAdapter.notifyDataSetChanged()
         LongBlackStorage.bookMarkIdx = -1
         updateBookMarkUI(LongBlackStorage.bookMarkIdx)
@@ -164,5 +164,9 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
             }
             textView.text = spannableString
         }
+    }
+
+    companion object {
+        private const val FIRST_ARTICLE = 1
     }
 }
