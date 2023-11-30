@@ -1,7 +1,8 @@
-package com.example.longdroid.data.di
+package com.example.longdroid.di
 
 import android.util.Log
 import com.example.longdroid.BuildConfig
+import com.example.longdroid.data.service.ArticleService
 import com.example.longdroid.data.service.LibraryApiService
 import com.example.longdroid.data.service.LikedService
 import com.example.longdroid.data.service.NoteListService
@@ -15,7 +16,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import retrofit2.Retrofit
 
-object HomeApiFactory {
+object ApiFactory {
 
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()
@@ -54,7 +55,8 @@ object HomeApiFactory {
 }
 
 object ServicePool {
-    val likedService = HomeApiFactory.create<LikedService>()
-    val libraryService = HomeApiFactory.create<LibraryApiService>()
-    val noteListService = HomeApiFactory.create<NoteListService>()
+    val likedService = ApiFactory.create<LikedService>()
+    val libraryService = ApiFactory.create<LibraryApiService>()
+    val noteListService = ApiFactory.create<NoteListService>()
+    val articleService = ApiFactory.create<ArticleService>()
 }

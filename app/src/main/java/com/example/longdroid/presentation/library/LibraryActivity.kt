@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import com.bumptech.glide.Glide
 import com.example.longdroid.R
-import com.example.longdroid.data.di.ServicePool
+import com.example.longdroid.di.ServicePool
 import com.example.longdroid.data.model.response.LibraryResponse
 import com.example.longdroid.databinding.ActivityLibraryBinding
 import com.example.longdroid.util.binding.BindingActivity
