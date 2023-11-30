@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import coil.load
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityHomeBinding
 import com.example.longdroid.presentation.library.LibraryActivity
@@ -42,7 +43,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        binding.ivEventList.setImageResource(imageResources[currentImageIndex])
+        binding.ivEventList.load(imageResources[currentImageIndex])
 
         binding.btnGoToLibrary.setOnClickListener {
             startActivity(Intent(this, LibraryActivity::class.java))
@@ -56,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
     private fun initButtons() {
         binding.btnNext.setOnClickListener {
             currentImageIndex = (currentImageIndex + 1) % imageResources.size
-            binding.ivEventList.setImageResource(imageResources[currentImageIndex])
+            binding.ivEventList.load(imageResources[currentImageIndex])
         }
 
         binding.btnBefore.setOnClickListener {
@@ -65,7 +66,7 @@ class HomeActivity : AppCompatActivity() {
             } else {
                 imageResources.size - 1
             }
-            binding.ivEventList.setImageResource(imageResources[currentImageIndex])
+            binding.ivEventList.load(imageResources[currentImageIndex])
         }
     }
 
