@@ -1,6 +1,7 @@
 package com.example.longdroid.presentation.notelist
 
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.longdroid.R
@@ -50,10 +51,10 @@ class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activ
                         itemAdapter.submitList(noteListResponse.posts)
                     }
                 } else {
-                    // Handle error here
+                    Log.d("tongsin", response.errorBody().toString())
                 }
             }.onFailure { e ->
-                // Handle error here
+                Log.d("tongsin", e.toString())
             }
         }
     }

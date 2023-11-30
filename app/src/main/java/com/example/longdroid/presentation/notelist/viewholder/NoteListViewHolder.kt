@@ -35,7 +35,7 @@ class NoteListViewHolder(private val binding: ItemNoteBinding) :
                         val response = HomeServicePool.likedService.putLiked(
                             RequestLike(
                                 LIST_VIEW_CHECK,
-                                2,
+                                currentNote?.id ?: 0,
                             ),
                         )
                         response
