@@ -17,7 +17,7 @@
         android:src="@drawable/img_note_open_gallery" />
 
     <ImageView
-        android:id="@+id/btn_book_mark"
+        android:id="@+id/btn_liked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
