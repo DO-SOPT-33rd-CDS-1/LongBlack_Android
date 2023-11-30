@@ -1,7 +1,9 @@
 package com.example.longdroid.presentation.notelist.viewholder
 
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.util.Log
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.data.di.HomeServicePool
 import com.example.longdroid.data.model.request.RequestLike
@@ -55,12 +57,16 @@ class NoteListViewHolder(private val binding: ItemNoteBinding) :
         }
     }
 
-    fun bind(note: ResponseNote) {
+    fun bind(note: ResponseNote, imageResourceId: Int) {
         with(binding) {
             tvNoteTitle.text = note.title
             tvNoteWriter.text = note.writer
             tvNoteAlphabet.text = note.postType
-            containerNoteText.setBackgroundColor(Color.parseColor(note.color))
+            ivNoteImg.setImageResource(imageResourceId)
+
+            val colorInt = Color.parseColor(note.color)
+            val colorStateList = ColorStateList.valueOf(colorInt)
+            ViewCompat.setBackgroundTintList(containerNoteText, colorStateList)
         }
     }
 
