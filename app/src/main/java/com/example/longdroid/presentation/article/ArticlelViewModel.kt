@@ -3,27 +3,74 @@ package com.example.longdroid.presentation.article
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.longdroid.data.di.ServicePool.articleService
+import com.example.longdroid.data.model.request.RequestArticleBookMarkDto
+import com.example.longdroid.data.model.request.RequestArticleLikeDto
+import com.example.longdroid.data.model.request.RequestArticleStampDto
+import com.example.longdroid.data.model.response.ResponseArticleDto
+import kotlinx.coroutines.launch
 
 class ArticlelViewModel() : ViewModel() {
 
-    private val _isBookMarked = MutableLiveData(false)
-    val isBookMarked: LiveData<Boolean> get() = _isBookMarked
+    private val _articleData = MutableLiveData<ResponseArticleDto>()
+    val articleData: LiveData<ResponseArticleDto> get() = _articleData
 
-    private val _isStamp = MutableLiveData(false)
-    val isStamp: LiveData<Boolean> get() = _isStamp
-
-    private val _isLike = MutableLiveData(false)
-    val isLike: LiveData<Boolean> get() = _isLike
-
-    fun setLikeState() {
-        _isLike.value = _isLike.value?.not()
+    fun postStampState(postId: Long) {
+        viewModelScope.launch {
+            runCatching {
+                articleService.postStampInfo(
+                    RequestArticleStampDto(
+                        postId,
+                    ),
+                )
+            }
+        }
     }
 
-    fun setStampState() {
-        _isStamp.value = _isStamp.value?.not()
+    fun putLikeState(postId: Int, isListView: Boolean) {
+        viewModelScope.launch {
+            runCatching {
+                articleService.putLikeInfo(
+                    RequestArticleLikeDto(
+                        postId,
+                        isListView,
+                    ),
+                )
+            }
+        }
     }
 
-    fun setBookMarkState() {
-        _isBookMarked.value = _isBookMarked.value?.not()
+    fun getArticleData(postId: Int) {
+        viewModelScope.launch {
+            runCatching {
+                articleService.getArticleInfo(postId)
+            }.onSuccess {
+                _articleData.value = it
+            }.onFailure {
+                // TODO: 에러 처리
+            }
+        }
+    }
+
+    fun postBookMarkState(postId: Int, bookMarkIdx: Int) {
+        viewModelScope.launch {
+            runCatching {
+                articleService.postBookMarkInfo(
+                    postId,
+                    RequestArticleBookMarkDto(
+                        bookMarkIdx,
+                    ),
+                )
+            }
+        }
+    }
+
+    fun deleteBookMarkState(postId: Int) {
+        viewModelScope.launch {
+            runCatching {
+                articleService.deleteBookMarkInfo(postId)
+            }
+        }
     }
 }

@@ -53,10 +53,7 @@ object HomeApiFactory {
     inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
 }
 
-object HomeServicePool {
-    // TODO 이런식으로 ServicePool 각자 만들어서 쓰면 됩니다!
-    // val homeService = HomeApiFactory.create<HomeService>()  <--- 예시임!
-
+object ServicePool {
     val likedService = HomeApiFactory.create<LikedService>()
     val libraryService = HomeApiFactory.create<LibraryApiService>()
     val noteListService = HomeApiFactory.create<NoteListService>()

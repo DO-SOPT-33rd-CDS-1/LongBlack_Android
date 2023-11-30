@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.longdroid.R
-import com.example.longdroid.data.di.HomeServicePool
+import com.example.longdroid.data.di.ServicePool
 import com.example.longdroid.databinding.ActivityNoteListBinding
 import com.example.longdroid.presentation.article.ArticleActivity
 import com.example.longdroid.presentation.notelist.adapter.NoteListFooterAdapter
@@ -51,7 +51,7 @@ class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activ
         CoroutineScope(Dispatchers.Main).launch {
             runCatching {
                 withContext(Dispatchers.IO) {
-                    val response = HomeServicePool.noteListService.getPost()
+                    val response = ServicePool.noteListService.getPost()
                     response
                 }
             }.onSuccess { response ->
