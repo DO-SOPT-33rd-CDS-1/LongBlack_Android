@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.util.Log
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.longdroid.R
 import com.example.longdroid.data.di.HomeServicePool
 import com.example.longdroid.data.model.request.RequestLike
 import com.example.longdroid.data.model.response.ResponseNote
@@ -64,9 +65,22 @@ class NoteListViewHolder(private val binding: ItemNoteBinding) :
             tvNoteAlphabet.text = note.postType
             ivNoteImg.setImageResource(imageResourceId)
 
-            val colorInt = Color.parseColor(note.color)
-            val colorStateList = ColorStateList.valueOf(colorInt)
-            ViewCompat.setBackgroundTintList(containerNoteText, colorStateList)
+            setBackgroundTint(note)
+            setLikedBtn(note)
+        }
+    }
+
+    private fun setBackgroundTint(note: ResponseNote) {
+        val colorInt = Color.parseColor(note.color)
+        val colorStateList = ColorStateList.valueOf(colorInt)
+        ViewCompat.setBackgroundTintList(binding.containerNoteText, colorStateList)
+    }
+
+    private fun setLikedBtn(note: ResponseNote) {
+        if (note.like) {
+            btnLiked.setImageResource(R.drawable.ic_book_mark_on_big)
+        } else {
+            btnLiked.setImageResource(R.drawable.ic_book_mark_off_big)
         }
     }
 
