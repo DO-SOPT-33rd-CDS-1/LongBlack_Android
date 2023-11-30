@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ConcatAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.longdroid.R
 import com.example.longdroid.data.datasource.LongBlackStorage
@@ -34,6 +36,7 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
 
         setAdapter()
         fetchArticle()
+        checkScrollToBookMark()
         putLikeState()
         clickBookMark()
     }
@@ -41,6 +44,30 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
     private fun setAdapter() {
         val articleAdapter = ConcatAdapter(articleTitleAdapter, articleParagraphAdapter)
         binding.rvArticleTitle.adapter = articleAdapter
+    }
+
+    private fun fetchArticle() {
+        articleViewModel.getArticleData(1)
+        articleViewModel.articleData.observe(this, this::onArticleDataChanged)
+    }
+
+    private fun checkScrollToBookMark() {
+        if (LongBlackStorage.bookMarkIdx != -1) {
+            binding.rvArticleTitle.post {
+                smoothScrollToBookmark()
+            }
+        }
+    }
+
+    private fun smoothScrollToBookmark() {
+        val layoutManager = (binding.rvArticleTitle.layoutManager as LinearLayoutManager)
+        LongBlackStorage.bookMarkIdx?.let {
+            layoutManager.smoothScrollToPosition(
+                binding.rvArticleTitle,
+                RecyclerView.State(),
+                it,
+            )
+        }
     }
 
     private fun addReadMark(textView: TextView, clickedText: String, position: Int) {
@@ -67,11 +94,6 @@ class ArticleActivity : BindingActivity<ActivityArticleBinding>(R.layout.activit
             articleViewModel.putLikeState(1, false)
             fetchArticle()
         }
-    }
-
-    private fun fetchArticle() {
-        articleViewModel.getArticleData(1)
-        articleViewModel.articleData.observe(this, this::onArticleDataChanged)
     }
 
     private fun onArticleDataChanged(articleData: ResponseArticleDto) {
