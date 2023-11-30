@@ -1,10 +1,10 @@
-package com.example.longdroid.presentation.note_list.adapter
+package com.example.longdroid.presentation.notelist.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.R
-import com.example.longdroid.presentation.note_list.viewholder.HeaderViewHolder
+import com.example.longdroid.presentation.notelist.viewholder.HeaderViewHolder
 
 class NoteListHeaderAdapter : RecyclerView.Adapter<HeaderViewHolder>() {
 

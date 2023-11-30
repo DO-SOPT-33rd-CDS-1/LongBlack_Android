@@ -1,13 +1,13 @@
-package com.example.longdroid.presentation.note_list
+package com.example.longdroid.presentation.notelist
 
 import android.os.Bundle
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityNoteListBinding
-import com.example.longdroid.presentation.note_list.adapter.NoteListFooterAdapter
-import com.example.longdroid.presentation.note_list.adapter.NoteListHeaderAdapter
-import com.example.longdroid.presentation.note_list.adapter.NoteListItemAdapter
+import com.example.longdroid.presentation.notelist.adapter.NoteListFooterAdapter
+import com.example.longdroid.presentation.notelist.adapter.NoteListHeaderAdapter
+import com.example.longdroid.presentation.notelist.adapter.NoteListItemAdapter
 import com.example.longdroid.util.binding.BindingActivity
 
 class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activity_note_list) {

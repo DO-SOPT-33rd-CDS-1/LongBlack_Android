@@ -1,4 +1,4 @@
-package com.example.longdroid.presentation.note_list.viewholder
+package com.example.longdroid.presentation.notelist.viewholder
 
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +10,6 @@ import com.example.longdroid.util.extension.showToast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
 class NoteListViewHolder(binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
     private val btnLiked = binding.btnLiked
 

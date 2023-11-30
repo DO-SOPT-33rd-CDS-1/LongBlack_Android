@@ -33,4 +33,21 @@
     <string name="library_caution_3">샷으로 교환 후 14일 이내(교환일 기준)에 사용하셔야 합니다.</string>
     <string name="library_caution_4">증정으로 받은 샷은 환불 받을 수 없습니다.</string>
     <string name="library_caution_5">샷은 멤버십을 유지하고 있어야 사용이 가능합니다.</string>
+
+    <!--홈 뷰-->
+    <string name="home_time_read">이시간이지나면\n읽을수없습니다.</string>
+    <string name="home_today_note_content">오픈갤러리 : 내 거실이 갤러리, 미술 시장의\n빈틈을 파고든 원화 구독 서비스</string>
+    <string name="home_today_note_title">오늘의 노트</string>
+    <string name="home_comunity_title">노트 커뮤니티</string>
+    <string name="home_comunity_content">“사람이 없어도 운영이 안되는 경우도 간혹 있던\n데...😢😢”</string>
+    <string name="home_go_to_note">전체 노트 보기</string>
+    <string name="home_go_to_library">라이브러리 가기</string>
+    <string name="home_release_note_title">공개 예정 노트</string>
+    <string name="home_release_wendy_content">웬디 맥노트 : 뉴옥타임즈 그래픽 저널리스트\n가, 낯선 이들을 그리며 배운것들</string>
+    <string name="home_release_lck_content">LCK : ‘소환사의 협곡’은 어떻게 MZ의 놀이터\n가 됐나</string>
+    <string name="home_release_soong_content">마케터 숭 : 고유함을 묻고 기록하고 알릴 때,\n 나라는 브랜드는 태어난다</string>
+    <string name="home_event_title">이벤트</string>
+    <string name="home_release_mark_b">B</string>
+    <string name="home_release_author_long_black">롱블랙</string>
+    <string name="home_release_author_yoonji">김윤지</string>
 </resources>
