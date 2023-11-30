@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.longdroid.R
-import com.example.longdroid.data.di.HomeServicePool
+import com.example.longdroid.data.di.ServicePool
 import com.example.longdroid.data.model.request.RequestLike
 import com.example.longdroid.data.model.response.ResponseNote
 import com.example.longdroid.databinding.ItemNoteBinding
@@ -42,7 +42,7 @@ class NoteListViewHolder(
             CoroutineScope(Dispatchers.Main).launch {
                 runCatching {
                     withContext(Dispatchers.IO) {
-                        val response = HomeServicePool.likedService.putLiked(
+                        val response = ServicePool.likedService.putLiked(
                             RequestLike(
                                 LIST_VIEW_CHECK,
                                 currentNote?.id ?: 0,
