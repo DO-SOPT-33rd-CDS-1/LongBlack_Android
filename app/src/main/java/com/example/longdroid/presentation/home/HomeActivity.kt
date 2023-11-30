@@ -1,4 +1,4 @@
-package com.example.longdroid.presentation
+package com.example.longdroid.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,9 +10,6 @@ import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityHomeBinding
 import com.example.longdroid.presentation.library.LibraryActivity
 import com.example.longdroid.presentation.notelist.NoteListActivity
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -85,18 +82,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun updateRemainingTime() {
-        val currentTime = Calendar.getInstance().time
-        val dateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
-        val currentTimeString = dateFormat.format(currentTime)
-
-        val currentTimeParts = currentTimeString.split(":")
-        val currentHour = currentTimeParts[0].toInt()
-        val currentMinute = currentTimeParts[1].toInt()
-        val currentSecond = currentTimeParts[2].toInt()
-
-        val remainingHour = 24 - currentHour - 1
-        val remainingMinute = 59 - currentMinute
-        val remainingSecond = 59 - currentSecond
+        TimeManager.updateRemainingTime()
+        val (remainingHour, remainingMinute, remainingSecond) = TimeManager.remainingTime
 
         binding.tvHour.text = String.format("%02d", remainingHour)
         binding.tvMinute.text = String.format("%02d", remainingMinute)
