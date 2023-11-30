@@ -2,8 +2,6 @@ package com.example.longdroid.data.di
 
 import android.util.Log
 import com.example.longdroid.BuildConfig
-import com.example.longdroid.data.service.ArticleService
-import com.example.longdroid.data.service.LikedService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
