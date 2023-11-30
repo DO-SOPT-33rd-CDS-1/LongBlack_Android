@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.longdroid.R
 import com.example.longdroid.databinding.ActivityHomeBinding
@@ -41,33 +39,37 @@ class HomeActivity : AppCompatActivity() {
         val view: View = binding.root
         setContentView(view)
 
-        val imageView: ImageView = binding.ivEventList
-        val nextButton: ImageButton = binding.btnNext
-        val beforeButton: ImageButton = binding.btnBefore
+        initViews()
+        initButtons()
+        updateRemainingTime()
+    }
 
-        nextButton.setOnClickListener {
-            currentImageIndex = (currentImageIndex + 1) % imageResources.size
-            imageView.setImageResource(imageResources[currentImageIndex])
+    private fun initViews() {
+        binding.ivEventList.setImageResource(imageResources[currentImageIndex])
+
+        binding.btnGoToLibrary.setOnClickListener {
+            startActivity(Intent(this, LibraryActivity::class.java))
         }
 
-        beforeButton.setOnClickListener {
+        binding.btnGoToNote.setOnClickListener {
+            startActivity(Intent(this, NoteListActivity::class.java))
+        }
+    }
+
+    private fun initButtons() {
+        binding.btnNext.setOnClickListener {
+            currentImageIndex = (currentImageIndex + 1) % imageResources.size
+            binding.ivEventList.setImageResource(imageResources[currentImageIndex])
+        }
+
+        binding.btnBefore.setOnClickListener {
             currentImageIndex = if (currentImageIndex > 0) {
                 currentImageIndex - 1
             } else {
                 imageResources.size - 1
             }
-            imageView.setImageResource(imageResources[currentImageIndex])
+            binding.ivEventList.setImageResource(imageResources[currentImageIndex])
         }
-        binding.btnGoToLibrary.setOnClickListener {
-            val intent = Intent(this, LibraryActivity::class.java)
-            startActivity(intent)
-        }
-        binding.btnGoToNote.setOnClickListener {
-            val intent = Intent(this, NoteListActivity::class.java)
-            startActivity(intent)
-        }
-
-        updateRemainingTime()
     }
 
     override fun onResume() {
