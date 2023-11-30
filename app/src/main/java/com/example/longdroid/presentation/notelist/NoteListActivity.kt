@@ -1,7 +1,6 @@
 package com.example.longdroid.presentation.notelist
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.longdroid.R

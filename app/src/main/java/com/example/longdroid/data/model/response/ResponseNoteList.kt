@@ -22,5 +22,5 @@ data class ResponseNote(
     @SerialName("color")
     val color: String,
     @SerialName("like")
-    val like: Boolean,
+    var like: Boolean,
 )

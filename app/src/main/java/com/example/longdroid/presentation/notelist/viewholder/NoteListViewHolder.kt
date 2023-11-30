@@ -19,7 +19,9 @@ import kotlinx.coroutines.withContext
 
 class NoteListViewHolder(private val binding: ItemNoteBinding) :
     RecyclerView.ViewHolder(binding.root) {
+
     private val btnLiked = binding.btnLiked
+    private var currentNote: ResponseNote? = null
 
     init {
         clickBtnLiked()
@@ -40,8 +42,11 @@ class NoteListViewHolder(private val binding: ItemNoteBinding) :
                     }
                 }.onSuccess { response ->
                     if (response.isSuccessful) {
-                        val responseBody = response.body().toString()
                         Log.d("tongsin", response.code().toString())
+                        currentNote?.let { note ->
+                            note.like = !note.like
+                            setLikedBtn(note)
+                        }
                     } else {
                         Log.d("tongsin", "error")
                         btnLiked.context.showToast(
@@ -59,6 +64,7 @@ class NoteListViewHolder(private val binding: ItemNoteBinding) :
     }
 
     fun bind(note: ResponseNote, imageResourceId: Int) {
+        currentNote = note
         with(binding) {
             tvNoteTitle.text = note.title
             tvNoteWriter.text = note.writer
