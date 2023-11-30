@@ -9,12 +9,13 @@ import com.example.longdroid.data.model.response.ResponseNote
 import com.example.longdroid.databinding.ItemNoteBinding
 import com.example.longdroid.presentation.notelist.viewholder.NoteListViewHolder
 
-class NoteListItemAdapter : ListAdapter<ResponseNote, NoteListViewHolder>(NoteDiffCallback()) {
+class NoteListItemAdapter(private val onItemClicked: (ResponseNote, Int) -> Unit) :
+    ListAdapter<ResponseNote, NoteListViewHolder>(NoteDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteListViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemNoteBinding.inflate(layoutInflater, parent, false)
-        return NoteListViewHolder(binding)
+        return NoteListViewHolder(binding, onItemClicked)
     }
 
     override fun onBindViewHolder(holder: NoteListViewHolder, position: Int) {
@@ -29,7 +30,7 @@ class NoteListItemAdapter : ListAdapter<ResponseNote, NoteListViewHolder>(NoteDi
             else -> R.drawable.img_note_sushi
         }
         val note = getItem(position)
-        holder.bind(note, resourceId)
+        holder.bind(note, resourceId, position)
     }
 }
 

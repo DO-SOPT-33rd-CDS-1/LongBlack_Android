@@ -17,14 +17,24 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class NoteListViewHolder(private val binding: ItemNoteBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+class NoteListViewHolder(
+    private val binding: ItemNoteBinding,
+    private val onItemClicked: (ResponseNote, Int) -> Unit,
+) : RecyclerView.ViewHolder(binding.root) {
 
     private val btnLiked = binding.btnLiked
     private var currentNote: ResponseNote? = null
+    private var currentPosition: Int? = null
 
     init {
         clickBtnLiked()
+        itemView.setOnClickListener {
+            currentNote?.let { note ->
+                currentPosition?.let { position ->
+                    onItemClicked(note, position)
+                }
+            }
+        }
     }
 
     private fun clickBtnLiked() {
@@ -63,8 +73,9 @@ class NoteListViewHolder(private val binding: ItemNoteBinding) :
         }
     }
 
-    fun bind(note: ResponseNote, imageResourceId: Int) {
+    fun bind(note: ResponseNote, imageResourceId: Int, position: Int) {
         currentNote = note
+        currentPosition = position
         with(binding) {
             tvNoteTitle.text = note.title
             tvNoteWriter.text = note.writer

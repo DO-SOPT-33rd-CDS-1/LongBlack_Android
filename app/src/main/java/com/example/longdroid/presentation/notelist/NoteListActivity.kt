@@ -1,5 +1,6 @@
 package com.example.longdroid.presentation.notelist
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.ConcatAdapter
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.longdroid.R
 import com.example.longdroid.data.di.HomeServicePool
 import com.example.longdroid.databinding.ActivityNoteListBinding
+import com.example.longdroid.presentation.article.ArticleActivity
 import com.example.longdroid.presentation.notelist.adapter.NoteListFooterAdapter
 import com.example.longdroid.presentation.notelist.adapter.NoteListHeaderAdapter
 import com.example.longdroid.presentation.notelist.adapter.NoteListItemAdapter
@@ -18,7 +20,12 @@ import kotlinx.coroutines.withContext
 
 class NoteListActivity : BindingActivity<ActivityNoteListBinding>(R.layout.activity_note_list) {
 
-    private val itemAdapter = NoteListItemAdapter()
+    private val itemAdapter = NoteListItemAdapter { note, position ->
+        if (position == 0) {
+            val intent = Intent(this, ArticleActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
