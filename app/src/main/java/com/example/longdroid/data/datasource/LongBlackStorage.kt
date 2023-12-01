@@ -30,9 +30,9 @@ object LongBlackStorage {
         }
     }
 
-    var bookMarkIdx: Int?
+    var bookMarkIdx: Int
         get() = pref.getInt(BOOK_IDX, -1)
-        set(value) = pref.edit { value?.let { putInt(BOOK_IDX, it) } }
+        set(value) = pref.edit { putInt(BOOK_IDX, value) }
 }
 
 const val BOOK_IDX = "bookMarkIdx"
